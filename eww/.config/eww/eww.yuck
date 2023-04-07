@@ -1,0 +1,89 @@
+;; Bar Window
+(defwindow bar
+  :monitor 0
+  :geometry (geometry :x "0%" 
+                      :y "0%" 
+                      :height "100%" 
+                      :width "45px"
+                      :anchor "center left")
+  :reserve (struts :distance "45px" :side "left")
+  :stacking "bg"
+  :exclusive true
+  (bar)
+  )
+
+(defwidget bar []
+  (box :orientation "v" :space-evenly false
+    (box :orientation "v" :halign "center" :valign "start" :vexpand false :space-evenly false :spacing "10px"
+      (battery)
+      )
+    (box :class "space" :orientation "v" :halign "center" :valign "start" :vexpand false :space-evenly false :spacing "20px"
+      (network)
+      )
+
+    (box :orientation "v" :halign "center" :valign "center" :vexpand true
+      (workspaces)
+      )
+
+    (box :orientation "v" :halign "center" :valign "end" :vexpand false
+      (spacer)
+      (time)
+      )
+    )
+  )
+
+;; Workspaces
+(defwidget workspaces []
+    (literal :content workspace)
+  )
+;; (deflisten workspace `scripts/workspaces`)
+(deflisten workspace `scripts/hyprworkspaces`)
+
+;; Time
+(defwidget time []
+  (transform :translate-y "0px"
+  (label :class "time" :text time :wrap true)
+  ))
+(defpoll time :interval "5s"
+  `date +%d/%n%m/%n%g%n%n%H:%n%M:%n%S`
+  )
+
+;; Battery
+(defwidget battery []
+  (box :class "battery" :orientation "v" :halign "center" :space-evenly false
+        bat-icon
+        (label :class "battery-label" :angle 90 :text bat-per)
+      ))
+;; (defwidget battery []
+;;   (box :class "battery" :orientation "v" :space-evenly false
+;;     (eventbox :onhover "eww update bat-bool=true" :onhoverlost "eww update bat-bool=false"
+;;       (box :orientation "v" :space-evenly false
+;;         (revealer :transition "slidedown" :reveal bat-bool
+;;           (label :class "battery-label" :angle 90 :text bat-per)
+;;           )
+;;       bat-icon))))
+(defpoll bat-icon :interval "15s" `scripts/bat icon`)
+(defpoll bat-per :interval "15s" `scripts/bat per`)
+(defpoll bat-rem :interval "15s" `scripts/bat rem`)
+(defvar bat-bool false)
+
+;; Network
+(defwidget network []
+  (box :class "network" :orientation "v" :halign "center" :space-evenly false
+    (label :text "")
+    (label :class "network-label" :angle 90 :text network)
+    ))
+;; (defwidget network []
+;;   (box :class "network" :orientation "v" :halign "center" :space-evenly false
+;;     (eventbox :onhover "eww update net-bool=true" :onhoverlost "eww update net-bool=false"
+;;       (box :orientation "v" :halign "center" :space-evenly false
+;;         (revealer :transition "slidedown" :reveal net-bool
+;;           (label :class "network-label" :angle 90 :text network)
+;;           )
+;;       ""))))
+(defpoll network :interval "15s" `nmcli connection show -active | awk 'NR==2{print $1}'`)
+(defvar net-bool false)
+
+(defwidget spacer []
+  (box " ")
+  )

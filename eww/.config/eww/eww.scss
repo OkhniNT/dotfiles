@@ -1,0 +1,116 @@
+@import "colors.scss";
+
+*{
+    all: unset;
+    background: $background;
+    color: $foreground;
+}
+
+window {
+    & > * {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+}
+
+.space {
+    padding-top: 10px;
+}
+
+.workspaces, .time, .battery, .network {
+    border: 3px solid $foreground;
+    border-radius: 15px;
+}
+
+.workspaces, .time, .battery, .battery-label, .network, .network-label {
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.workspaces {
+    padding: 6px 7px 6px 7px;
+    font-size: 16px;
+}
+
+.time {
+    padding: 6px 5px 6px 5px;
+    font-size:13px
+}
+
+.battery {
+    padding: 4px 5px 4px 5px;
+    font-size: 19px;
+}
+
+.battery-label {
+    padding: 5px 0 5px 0;
+}
+
+.network {
+    padding: 5px;
+    font-size: 18px;
+}
+
+.network-label {
+    padding: 10px 0 10px 0;
+}
+
+/*
+window {
+    background: $background;
+    color: $foreground;
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 16px;
+
+    & > * {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.workspaces {
+    background: $foreground;
+    border-radius: 5px;
+    padding: 8px;
+    color: $background;
+    font-size: 22px;
+}
+
+.time {
+    background: $foreground;
+    border-radius: 5px;
+    padding: 0px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: $background;
+    font-size: 17px;
+}
+
+.battery {
+    background: $foreground;
+    border-radius: 5px;
+    padding: 5px;
+    color: $background;
+    font-size: 26px;
+}
+
+.battery-label {
+    font-size: 16px;
+    padding-top: 3px;
+}
+
+.network {
+    background: $foreground;
+    border-radius: 5px;
+    padding: 5px;
+    color: $background;
+    font-size: 23px;
+}
+
+.network-label {
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+*/

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+bat="$(acpi | cut -d' ' -f4- | sed 's/%//' | sed 's/,//')"
+per="$(echo $bat | cut -d' ' -f1)"
+
+case $1 in
+    per)
+        echo $per%
+        ;;
+    rem)
+        echo $bat | cut -d' ' -f2-
+        ;;
+    icon)
+        if [ $per -gt 76 ]; then echo 
+        elif [ $per -gt 51 ]; then echo 
+        elif [ $per -gt 26 ]; then echo 
+        else echo 
+        fi
+        ;;
+esac

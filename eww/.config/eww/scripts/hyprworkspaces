@@ -1,0 +1,21 @@
+#!/bin/bash
+
+hyprworkspaces() {
+    hyprpoll="$(hyprctl --batch 'workspaces; monitors')"
+    desktops="$(cat <<<$hyprpoll | grep 'workspace ID' | cut -d' ' -f3 | sort -n)"
+    focused="$(cat <<<$hyprpoll | grep 'active workspace' | cut -d' ' -f3)"
+    
+    desktops="$(cat <<< $desktops | sed 's/'$focused'//;s/.*0/0/;/-99/d')"
+
+    echo -n '(box :class "workspaces" :halign "center" :orientation "v" :spacing 15'
+    for desktop in $desktops; do
+        echo -n '(label :text "'$desktop'")'
+    done
+    echo ')'
+}
+
+hyprworkspaces
+socat -u UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - | stdbuf -o0 grep -E '^movewindow|^workspace' | while read -r _; do
+    sleep 0.05
+    hyprworkspaces
+done
