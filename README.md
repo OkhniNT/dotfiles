@@ -41,6 +41,7 @@
 
 ### Filemanager
 - vifm
+- ueberzug
 
 ### Browser
 - firefox
@@ -105,14 +106,13 @@
 
 ### Pip
 - pywal
-- ueberzug
 
 ### AUR
 - paru
 - xdg-desktop-portal-hyprland-git
 - spotify
 - dragon-drop
-- libnotifty-id
+- libnotify-id
 - pandoc-bin
 - ttf-iosevka
 - vscodium-bin

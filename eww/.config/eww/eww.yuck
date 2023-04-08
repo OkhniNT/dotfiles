@@ -7,17 +7,17 @@
                       :width "45px"
                       :anchor "center left")
   :reserve (struts :distance "45px" :side "left")
-  :stacking "bg"
+  :stacking "bottom"
   :exclusive true
+  :focusable false
+  :namespace "eww-bar"
   (bar)
   )
 
 (defwidget bar []
-  (box :orientation "v" :space-evenly false
-    (box :orientation "v" :halign "center" :valign "start" :vexpand false :space-evenly false :spacing "10px"
+  (box :orientation "v" :space-evenly true
+    (box :orientation "v" :halign "center" :valign "start" :vexpand true :space-evenly false :spacing 16
       (battery)
-      )
-    (box :class "space" :orientation "v" :halign "center" :valign "start" :vexpand false :space-evenly false :spacing "20px"
       (network)
       )
 
@@ -25,8 +25,7 @@
       (workspaces)
       )
 
-    (box :orientation "v" :halign "center" :valign "end" :vexpand false
-      (spacer)
+    (box :orientation "v" :halign "center" :valign "end" :vexpand true
       (time)
       )
     )
@@ -41,11 +40,15 @@
 
 ;; Time
 (defwidget time []
-  (transform :translate-y "0px"
+  (box :orientation "v" :halign "center" :space-evenly false :spacing 16
   (label :class "time" :text time :wrap true)
+  (label :class "time" :text date :wrap true)
   ))
 (defpoll time :interval "5s"
-  `date +%d/%n%m/%n%g%n%n%H:%n%M:%n%S`
+  `date +%H%n%M%n%S`
+  )
+(defpoll date :interval "1m"
+  `date +%d%n%m%n%g`
   )
 
 ;; Battery

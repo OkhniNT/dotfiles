@@ -1,9 +1,1 @@
-@theme "~/.cache/wal/slate"
-
-* {
-    font-size: 22px;
-}
-
-configuration {
-    font-size: 22px;
-}
+@theme "~/.cache/wal/rounded-common"

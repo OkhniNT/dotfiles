@@ -1,0 +1,3 @@
+#!/bin/dash
+
+grim -g "$(slurp)" ${HOME}/share/pictures/screenshots

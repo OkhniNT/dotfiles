@@ -1,15 +1,22 @@
 @import "colors.scss";
 
+$bg: rgba($background, 0.0);
+
 *{
     all: unset;
-    background: $background;
-    color: $foreground;
+
+    font-family: monospace;
+    font-weight: 900;
 }
 
 window {
+    background: $bg;
+    color: $foreground;
+
     & > * {
-        padding-top: 7px;
-        padding-bottom: 7px;
+        // padding: 20px 0px 20px 20px;
+        padding: 10px;
+        padding-right: 0;
     }
 }
 
@@ -18,99 +25,42 @@ window {
 }
 
 .workspaces, .time, .battery, .network {
+    background: $background;
     border: 3px solid $foreground;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
-.workspaces, .time, .battery, .battery-label, .network, .network-label {
-    font-family: monospace;
-    font-weight: 900;
-    font-size: 15px;
-}
-
-.workspaces {
-    padding: 6px 7px 6px 7px;
+.workspaces, .battery, .battery-label, .network, .network-label {
     font-size: 16px;
 }
 
-.time {
-    padding: 6px 5px 6px 5px;
-    font-size:13px
+.workspaces {
+    padding: 7px 6px 7px 6px;
+    font-size: 16px;
 }
 
-.battery {
-    padding: 4px 5px 4px 5px;
+.battery, .network {
     font-size: 19px;
 }
 
+.battery {
+    padding: 5px 5px 4px 5px;
+}
+
 .battery-label {
-    padding: 5px 0 5px 0;
+    padding: 5px 0 6px 0;
 }
 
 .network {
-    padding: 5px;
-    font-size: 18px;
+    padding: 6px 4px 5px 4px;
 }
 
 .network-label {
     padding: 10px 0 10px 0;
 }
 
-/*
-window {
-    background: $background;
-    color: $foreground;
-    font-family: monospace;
-    font-weight: 700;
-    font-size: 16px;
-
-    & > * {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-}
-
-.workspaces {
-    background: $foreground;
-    border-radius: 5px;
-    padding: 8px;
-    color: $background;
-    font-size: 22px;
-}
-
 .time {
-    background: $foreground;
-    border-radius: 5px;
-    padding: 0px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    color: $background;
-    font-size: 17px;
+    padding: 7px 6px 7px 6px;
+    font-size: 15px;
 }
 
-.battery {
-    background: $foreground;
-    border-radius: 5px;
-    padding: 5px;
-    color: $background;
-    font-size: 26px;
-}
-
-.battery-label {
-    font-size: 16px;
-    padding-top: 3px;
-}
-
-.network {
-    background: $foreground;
-    border-radius: 5px;
-    padding: 5px;
-    color: $background;
-    font-size: 23px;
-}
-
-.network-label {
-    padding-bottom: 5px;
-    font-size: 20px;
-}
-*/

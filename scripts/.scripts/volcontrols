@@ -1,0 +1,21 @@
+#!/bin/bash
+AMOUNT=5
+
+case $1 in
+    up)
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ $AMOUNT%+
+        icon=""
+        ;;
+    down)
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ $AMOUNT%-
+        icon=""
+        ;;
+    mute)
+        wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+        if [[ "$(wpctl get-volume @DEFAULT_AUDIO_SINK@)" == *"[MUTED]" ]]; then icon=""
+        else icon=""
+        fi
+        ;;
+esac
+
+notify-send -r 1 "$icon" "$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2- | sed 's/\s//')"
