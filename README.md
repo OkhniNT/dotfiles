@@ -2,118 +2,125 @@
 
 ## System
 
-### Operating System
-- arch linux
-
-### Display Protocol
-- wayland
-
 ### Bootloader
-- refind
+```
+refind
+```
 
 ### WM
-- hyprland
+```
+hyprland
+```
 
 ### Shell
-- zsh
+```
+zsh
+```
 
 ### Dotfile Management
-- stow
-- git
+```
+stow, git
+```
 
 ### Font
-- mononoki
-- font-awesome
+```
+mononoki, font-awesome
+```
 
 ## Applications
 
 ### Statusbar
-- eww
+```
+eww
+```
 
 ### Notifications
-- dunst
+```
+dunst
+```
 
 ### Application Launcher
-- rofi
+```
+rofi
+```
 
 ### Editor
-- vim (gvim for clipboard support)
+```
+vim (gvim for clipboard support)
+```
 
 ### Filemanager
-- vifm
-- ueberzug
+```
+vifm, ueberzug
+```
 
 ### Browser
-- firefox
-- torbrowser-launcher
+```
+firefox, torbrowser-launcher
+```
 
 ### Documents
-- obsidian
-- latex
-- unoconv
+```
+obsidian, latex, unoconv
+```
 
 ### PDF Viewer
-- zathura
-- zathura-pdf-poppler
-- zathura pywal
+```
+zathura, zathura-pdf-poppler, zathura pywal
+```
 
 ### Screenshots
-- grim
-- slurp
+```
+grim, slurp
+```
 
 ### Video
-- vlc
-- mpv
+```
+vlc, mpv
+```
 
 ### Audio
-- pipewire
+```
+pipewire
+```
 
 ### Network
-- networkmanager
+```
+networkmanager
+```
 
 ### CLI Utils
-- xclip
-- figlet
-- ffmpeg
-- imagemagick
-- unzip
-- dosfstools
-- r
+```
+xclip, figlet, ffmpeg, imagemagick, unzip, dosfstools, r
+```
 
 ### Power Management
-- tlp
-- cpupower
+```
+tlp, cpupower
+```
 
 ### Monitoring
-- htop
-- powertop
-- socat
+```
+htop, powertop, socat
+```
 
 ### Graphical Applications
-- sxiv
-- qbittorrent
-- inkscape
-- gimp
-- steam
-- discord
+```
+sxiv, qbittorrent, inkscape, gimp, steam, discord
+```
 
 ### Misc
-- nvidia drivers
-- unclutter
-- swww
-- light
-- ntp
+```
+nvidia drivers, unclutter, swww, light, ntp
+```
 
 ### Pip
-- pywal
+```
+pywal
+```
 
 ### AUR
-- paru
-- xdg-desktop-portal-hyprland-git
-- spotify
-- dragon-drop
-- libnotify-id
-- pandoc-bin
-- ttf-iosevka
-- vscodium-bin
+```
+paru, xdg-desktop-portal-hyprland-git, spotify, dragon-drop, libnotify-id, pandoc-bin, ttf-iosevka, vscodium-bin
+```
 
