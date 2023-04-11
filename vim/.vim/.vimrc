@@ -108,9 +108,9 @@ au BufWritePost *polybar/config silent !killall polybar; setsid polybar bar &; x
 " restart bspwm after write
 au BufWritePost *bspwmrc silent !bspc wm -r
 " make install after write to config.h
-au BufRead,BufReadPre,BufNewFile *config.*h map == :w <CR>:silent !sudo make clean install <CR>:silent redraw! <CR>
+au BufRead,BufReadPre,BufNewFile *config.*h map == :w <CR>:silent !sudo make clean install<CR> :silent redraw!<CR>
 " bind == to compile latex
-au BufRead,BufReadPre,BufNewFile *.tex map == :w <CR>:silent !pdflatex '%'; rm *.log *.aux <CR>
+au BufRead,BufReadPre,BufNewFile *.tex nnoremap == :w <CR> :!pdflatex '%'; rm *.log *.aux <CR>
 " latex au
 au BufNewFile,BufRead *.tex
     \ set nocursorline |

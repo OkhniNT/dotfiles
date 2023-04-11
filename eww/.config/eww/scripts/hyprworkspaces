@@ -5,7 +5,9 @@ hyprworkspaces() {
     desktops="$(cat <<<$hyprpoll | grep 'workspace ID' | cut -d' ' -f3 | sort -n)"
     focused="$(cat <<<$hyprpoll | grep 'active workspace' | cut -d' ' -f3)"
     
-    desktops="$(cat <<< $desktops | sed 's/'$focused'//;s/.*0/0/;/-99/d')"
+    for focus in $focused; do
+        desktops="$(cat <<< $desktops | sed 's/'$focus'//;s/.*0/0/;/-99/d')"
+    done
 
     echo -n '(box :class "workspaces" :halign "center" :orientation "v" :spacing 15'
     for desktop in $desktops; do

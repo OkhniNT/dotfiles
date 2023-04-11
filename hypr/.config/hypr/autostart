@@ -1,7 +1,5 @@
 #!/bin/dash
 
-unclutter --timeout 3 &
-
 swww init &
 chbg ~/.config/back.png &
 

@@ -2,14 +2,14 @@
 
 case $1 in
     -l)
-        swww img --transition-fps 60 --transition-type "grow" --transition-pos 1720,1000 --transition-duration 1.5 $2 &
+        swww img --transition-fps 60 --transition-type "grow" --transition-pos 1720,880 --transition-duration 1.5 $2 &
         wal -c; wal -e -s -t -l -i $2 &
         cp $2 ~/.config/back.png
         xrdb ~/.cache/wal/Xresources
         kill -SIGUSR1 $(pidof st)
         ;;
     *)
-        swww img --transition-fps 60 --transition-type "grow" --transition-pos 1720,1000 --transition-duration 1.5 $1 &
+        swww img --transition-fps 60 --transition-type "grow" --transition-pos 1720,880 --transition-duration 1.5 $1 &
         wal -c; wal -e -s -t -i $1
         cp $1 ~/.config/back.png
         xrdb ~/.cache/wal/Xresources

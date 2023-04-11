@@ -10,10 +10,8 @@ export XDG_STATE_HOME=$HOME/.local/state
 # Language environment
 export LC_CTYPE="en_AU.UTF-8"
 
-# ZSH config directory
+# Config directories
 export ZDOTDIR="${HOME}/.config/zsh"
-
-# Vim config directory
 export VIMINIT="source ~/.vim/.vimrc"
 
 # Remove lesshst
@@ -22,6 +20,7 @@ export LESSHISTFILE=-
 # Install directories
 export CARGO_HOME="${HOME}/.cache/cargo"
 export RUSTUP_HOME="${HOME}/.cache/rustup"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # Default programs
 export EDITOR="vim"
