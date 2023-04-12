@@ -1,0 +1,12 @@
+#!/bin/dash
+
+HYPRGAMEMODE=$(hyprctl getoption animations:enabled | sed -n '2p' | awk '{print $2}')
+if [ $HYPRGAMEMODE = 1 ] ; then
+    hyprctl --batch "\
+        keyword general:col.active_border rgb(66e593);\
+        keyword animations:enabled 0;\
+        keyword decoration:blur 0;"
+    exit
+fi
+
+hyprctl reload
