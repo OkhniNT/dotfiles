@@ -1,9 +1,11 @@
 #!/bin/dash
 
+/usr/lib/polkit-kde-authentication-agent-1 &
+
 swww init &
 chbg ~/.config/back.png &
 
-eww daemon; eww open bar &
+eww daemon; eww open bar; eww open time-bar &
 
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 

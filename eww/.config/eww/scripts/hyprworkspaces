@@ -2,11 +2,11 @@
 
 hyprworkspaces() {
     hyprpoll="$(hyprctl --batch 'workspaces; monitors')"
-    desktops="$(cat <<<$hyprpoll | grep 'workspace ID' | cut -d' ' -f3 | sort -n)"
-    focused="$(cat <<<$hyprpoll | grep 'active workspace' | cut -d' ' -f3)"
-    
+    desktops="$(cat <<<$hyprpoll | grep 'workspace ID' | cut -d' ' -f3 | sort -n | sed 's/10/0/')"
+    focused="$(cat <<<$hyprpoll | grep 'active workspace' | cut -d' ' -f3 | sed 's/10/0/')"
+
     for focus in $focused; do
-        desktops="$(cat <<< $desktops | sed 's/'$focus'//;s/.*0/0/;/-99/d')"
+        desktops="$(cat <<< $desktops | sed 's/'$focus'//;/-99/d')"
     done
 
     echo -n '(box :class "workspaces" :halign "center" :orientation "v" :spacing 15'

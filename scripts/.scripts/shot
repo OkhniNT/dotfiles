@@ -1,3 +1,3 @@
 #!/bin/dash
 
-grim -g "$(slurp)" ${HOME}/media/pictures/screenshots
+grim -g "$(slurp -b 00000014 -c ffffff20)" ${HOME}/media/pictures/screenshots
