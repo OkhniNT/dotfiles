@@ -1,6 +1,6 @@
 #!/bin/dash
 
-icon="$(cat ~/.scripts/font-awesome-icons | rofi -dmenu | cut -d ' ' -f1)"
+icon="$(cat ~/.scripts/font-awesome-icons | tofi | cut -d ' ' -f1)"
 
 if [ "$icon" = "" ]; then
     exit 1

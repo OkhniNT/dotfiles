@@ -1,6 +1,6 @@
 #!/bin/dash
 
-sink="$(pactl list sinks short | cut -d'	' -f1-2 | rofi -dmenu -p "Sink Select")"
+sink="$(pactl list sinks short | cut -d'	' -f1-2 | tofi --prompt-text "Sink Select")"
 sinkName="$(echo $sink | cut -d' ' -f2)"
 
 pactl set-default-sink $sinkName

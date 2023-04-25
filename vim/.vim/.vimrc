@@ -81,7 +81,7 @@ nnoremap zS :shell<CR>
 inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "figures"'<CR><CR>:w<CR>
 nnoremap <C-f> : silent exec '!inkscape-figures edit "figures" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
 " latex pictures
-nnoremap <leader>f : silent exec '.!latex_diagrams'<CR><CR>:w<CR><CR>f[
+nnoremap <leader>f : silent exec '.!$HOME/.vim/scripts/latex_diagrams'<CR><CR>:w<CR><CR>f[
 
 " Commands
 " reload syntax highlighting

@@ -4,18 +4,21 @@ AMOUNT=5
 case $1 in
     up)
         light -A $AMOUNT
-        notify-send -r 2 " " "$(light | awk -F '.' '{print $1}')%"
+        icon=" "
         ;;
     down)
         light -U $AMOUNT
-        notify-send -r 2 " " "$(light | awk -F '.' '{print $1}')%"
+        icon=" "
         ;;
     min)
         light -S 1
-        notify-send -r 2 " " "$(light | awk -F '.' '{print $1}')%"
+        icon=" "
         ;;
     max)
         light -S 100
-        notify-send -r 2 " " "$(light | awk -F '.' '{print $1}')%"
+        icon=" "
         ;;
 esac
+
+light=$(light)
+notify-send -r 2 "$icon" "${light%\.*}"
