@@ -5,7 +5,7 @@
 swww init &
 chbg ~/.config/back.png &
 
-eww daemon; eww open bar; eww open time-bar &
+eww daemon; eww open bar; eww open tbar &
 
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 

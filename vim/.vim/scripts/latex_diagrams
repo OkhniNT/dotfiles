@@ -1,6 +1,6 @@
 #!/bin/dash
 
-file=$(ls Figures/ | rofi -dmenu)
+file=$(ls Figures/ | wofi -d)
 
 echo '    \\begin{figure}[ht]'
 echo '        \\centering'

@@ -123,7 +123,7 @@ mark h ~/
 mark d ~/documents
 mark D ~/downloads
 mark y ~/documents/obsidian/University
-mark b ~/share/pictures/backgrounds
+mark b ~/media/pictures/backgrounds
 mark m /mnt
 mark s ~/.scripts
 mark c ~/.config
