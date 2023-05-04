@@ -1,5 +1,5 @@
 # Path
-export PATH="$PATH:${HOME}/.scripts/:${HOME}/.local/bin"
+export PATH="$PATH:$HOME/.scripts/:$HOME/.local/bin"
 
 # Language environment
 export LC_CTYPE="en_AU.UTF-8"
@@ -15,14 +15,14 @@ export SDL_VIDEODRIVER=wayland
 export MOZ_ENABLE_WAYLAND=1
 
 # Config directories
-export ZDOTDIR="${HOME}/.config/zsh"
+export ZDOTDIR="$HOME/.config/zsh"
 export VIMINIT="source ~/.vim/.vimrc"
 
 # XDG base directories
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 # Install directories
 export CARGO_HOME="${HOME}/.cache/cargo"
@@ -34,4 +34,3 @@ export EDITOR="vim"
 export VISUAL="vim"
 export TERMINAL="st"
 export BROWSER="firefox"
-export LAUNCHER="wofi --show run"
