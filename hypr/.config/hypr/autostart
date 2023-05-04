@@ -6,12 +6,3 @@ swww init &
 chbg ~/.config/back.png &
 
 eww daemon; eww open bar; eww open tbar &
-
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-
-sleep 4
-killall xdg-desktop-portal-hyprland; killall xdg-desktop-portal
-/usr/lib/xdg-desktop-portal-hyprland &
-sleep 4
-/usr/lib/xdg-desktop-portal &
-

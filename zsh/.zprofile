@@ -8,6 +8,13 @@ export LC_CTYPE="en_AU.UTF-8"
 # Remove lesshst
 export LESSHISTFILE=-
 
+# Force wayland
+export GDK_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland-egl
+export CLUTTER_BACKEND=wayland
+export SDL_VIDEODRIVER=wayland
+export MOZ_ENABLE_WAYLAND=1
+
 # Config directories
 export ZDOTDIR="$HOME/.config/zsh"
 export VIMINIT="source ~/.vim/.vimrc"
@@ -30,4 +37,3 @@ export EDITOR="vim"
 export VISUAL="vim"
 export TERMINAL="st"
 export BROWSER="firefox"
-export LAUNCHER="rofi -show run"

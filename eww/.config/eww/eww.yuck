@@ -6,6 +6,7 @@
                       :height "100%" 
                       :width "45px"
                       :anchor "center left")
+  :reserve (struts :distance "45px" :side "left")
   :stacking "bottom"
   :exclusive true
   :focusable false

@@ -122,6 +122,7 @@ mark u /usr
 mark h ~/
 mark d ~/documents
 mark D ~/downloads
+mark g ~/git
 mark y ~/documents/obsidian/University
 mark b ~/media/pictures/backgrounds
 mark m /mnt
