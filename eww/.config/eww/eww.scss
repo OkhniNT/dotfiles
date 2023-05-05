@@ -30,43 +30,29 @@ window {
     padding-top: 10px;
 }
 
-.workspaces, .time, .battery, .network {
+.workspaces, .time, .network {
     background: $background;
     border: 3px solid $foreground;
     border-radius: 20px;
 }
 
-.workspaces, .battery, .battery-label, .network, .network-label {
-    font-size: 16px;
-}
-
 .workspaces {
     padding: 7px 6px 7px 6px;
-    font-size: 16px;
-}
-
-.battery, .network {
-    font-size: 17px;
-}
-
-.battery {
-    padding: 5px 5px 4px 5px;
-}
-
-.battery-label {
-    padding: 5px 0 6px 0;
+    font-size: 15px;
 }
 
 .network {
     padding: 6px 4px 5px 4px;
+    font-size: 16px;
 }
 
 .network-label {
     padding: 10px 0 10px 0;
+    font-size: 14px;
 }
 
 .time {
     padding: 7px 6px 7px 6px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
