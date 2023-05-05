@@ -1,3 +1,5 @@
 #!/bin/dash
 
-grim -g "$(slurp -b 00000014 -c ffffff20)" ${HOME}/share/pictures/screenshots
+dim="$(slurp)"
+sleep 0.2
+grim -g "$dim" $HOME/share/pictures/screenshots/"screenshot-$(date +'%F-%H-%M-%S').png"

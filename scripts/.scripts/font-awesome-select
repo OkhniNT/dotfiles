@@ -6,5 +6,5 @@ if [ "$icon" = "" ]; then
     exit 1
 fi
 
-echo $icon | xclip -r -sel clip
+echo $icon | wl-copy -n
 notify-send "Emoji copied to clipboard" "$icon"

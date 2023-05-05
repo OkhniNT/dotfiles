@@ -1,3 +1,5 @@
 #!/bin/dash
 
-grim -g "$(slurp -b 00000014 -c ffffff20)" /tmp/tmpsrnsht.png && wl-copy < /tmp/tmpsrnsht.png && rm /tmp/tmpsrnsht.png
+dim="$(slurp)"
+sleep 0.2
+grim -g "$dim" - | wl-copy
