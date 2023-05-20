@@ -7,7 +7,8 @@ hyprworkspaces() {
     
     desktops="$(cat <<< $desktops | sed 's/'$focused'//;s/.*0/0/;/-99/d')"
 
-    echo -n '(box :class "workspaces" :halign "center" :orientation "v" :spacing 15'
+    # echo -n '(box :class "workspaces" :halign "center" :orientation "v" :spacing 15'
+    echo -n '(box :class "workspaces" :spacing 15'
     for desktop in $desktops; do
         echo -n '(label :text "'$desktop'")'
     done

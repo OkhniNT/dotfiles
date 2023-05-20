@@ -3,9 +3,9 @@
   :monitor 0
   :geometry (geometry :x "0%" 
                       :y "0%" 
-                      :height "100%" 
-                      :width "45px"
-                      :anchor "center left")
+                      :height "10px" 
+                      :width "100%"
+                      :anchor "center bottom")
   :reserve (struts :distance "45px" :side "left")
   :stacking "bottom"
   :exclusive true
@@ -15,17 +15,17 @@
   )
 
 (defwidget bar []
-  (box :orientation "v" :space-evenly true
-    (box :orientation "v" :halign "center" :valign "start" :vexpand true :space-evenly false :spacing 16
+  (box :orientation "h" :space-evenly true
+    (box :orientation "h" :halign "start" :valign "center" :vexpand true :space-evenly false :spacing 16
       (battery)
       (network)
       )
 
-    (box :orientation "v" :halign "center" :valign "center" :vexpand true
+    (box :orientation "h" :halign "center" :valign "center" :vexpand true
       (workspaces)
       )
 
-    (box :orientation "v" :halign "center" :valign "end" :vexpand true
+    (box :orientation "h" :halign "end" :valign "center" :vexpand true
       (time)
       )
     )
@@ -33,60 +33,39 @@
 
 ;; Workspaces
 (defwidget workspaces []
-    (literal :content workspace)
+  (literal :content workspace)
   )
-;; (deflisten workspace `scripts/workspaces`)
 (deflisten workspace `scripts/hyprworkspaces`)
 
 ;; Time
 (defwidget time []
-  (box :orientation "v" :halign "center" :space-evenly false :spacing 16
-  (label :class "time" :text time :wrap true)
-  (label :class "time" :text date :wrap true)
-  ))
+  (box :orientation "h" :space-evenly false :spacing 10
+    (label :class "time" :text date :wrap true)
+    (label :class "time" :text time :wrap true)
+    ))
 (defpoll time :interval "5s"
-  `date +%H%n%M%n%S`
+  `date +%H:%M:%S`
   )
 (defpoll date :interval "1m"
-  `date +%d%n%m%n%g`
+  `date +"%A %Y-%m-%d"`
   )
 
 ;; Battery
 (defwidget battery []
-  (box :class "battery" :orientation "v" :halign "center" :space-evenly false
-        bat-icon
-        (label :class "battery-label" :angle 90 :text bat-per)
+  (box :class "battery" :space-evenly false
+      (label :class "battery-icon" :text bat-icon)
+      (label :class "battery-label" :text bat-per)
       ))
-;; (defwidget battery []
-;;   (box :class "battery" :orientation "v" :space-evenly false
-;;     (eventbox :onhover "eww update bat-bool=true" :onhoverlost "eww update bat-bool=false"
-;;       (box :orientation "v" :space-evenly false
-;;         (revealer :transition "slidedown" :reveal bat-bool
-;;           (label :class "battery-label" :angle 90 :text bat-per)
-;;           )
-;;       bat-icon))))
+
 (defpoll bat-icon :interval "15s" `scripts/bat icon`)
 (defpoll bat-per :interval "15s" `scripts/bat per`)
 (defpoll bat-rem :interval "15s" `scripts/bat rem`)
-(defvar bat-bool false)
 
 ;; Network
 (defwidget network []
-  (box :class "network" :orientation "v" :halign "center" :space-evenly false
-    (label :text "")
-    (label :class "network-label" :angle 90 :text network)
+  (box :class "network" :space-evenly false
+    (label :class "network-icon" :text "")
+    (label :class "network-label" :text network)
     ))
-;; (defwidget network []
-;;   (box :class "network" :orientation "v" :halign "center" :space-evenly false
-;;     (eventbox :onhover "eww update net-bool=true" :onhoverlost "eww update net-bool=false"
-;;       (box :orientation "v" :halign "center" :space-evenly false
-;;         (revealer :transition "slidedown" :reveal net-bool
-;;           (label :class "network-label" :angle 90 :text network)
-;;           )
-;;       ""))))
-(defpoll network :interval "15s" `nmcli connection show -active | awk 'NR==2{print $1}'`)
-(defvar net-bool false)
 
-(defwidget spacer []
-  (box " ")
-  )
+(defpoll network :interval "15s" `nmcli connection show -active | awk 'NR==2{print $1}'`)

@@ -1,0 +1,66 @@
+@import "colors.scss";
+
+$bg: rgba($background, 0.0);
+
+*{
+    all: unset;
+
+    font-family: monospace;
+    font-weight: 900;
+}
+
+window {
+    background: $bg;
+    color: $foreground;
+
+    & > * {
+        // padding: 20px 0px 20px 20px;
+        padding: 10px;
+        padding-right: 0;
+    }
+}
+
+.space {
+    padding-top: 10px;
+}
+
+.workspaces, .time, .battery, .network {
+    background: $background;
+    border: 3px solid $foreground;
+    border-radius: 20px;
+}
+
+.workspaces, .battery, .battery-label, .network, .network-label {
+    font-size: 16px;
+}
+
+.workspaces {
+    padding: 7px 6px 7px 6px;
+    font-size: 16px;
+}
+
+.battery, .network {
+    font-size: 19px;
+}
+
+.battery {
+    padding: 5px 5px 4px 5px;
+}
+
+.battery-label {
+    padding: 5px 0 6px 0;
+}
+
+.network {
+    padding: 6px 4px 5px 4px;
+}
+
+.network-label {
+    padding: 10px 0 10px 0;
+}
+
+.time {
+    padding: 7px 6px 7px 6px;
+    font-size: 15px;
+}
+
