@@ -1,10 +1,10 @@
 #!/bin/dash
 
-icon="$(cat ~/.scripts/font-awesome-icons | wofi --show dmenu | cut -d ' ' -f1)"
+icon="$(cat ~/.scripts/font-awesome-icons | tofi | cut -d ' ' -f1)"
 
 if [ "$icon" = "" ]; then
     exit 1
 fi
 
-echo $icon | xclip -r -sel clip
+echo $icon | wl-copy -n
 notify-send "Emoji copied to clipboard" "$icon"

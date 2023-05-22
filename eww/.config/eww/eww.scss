@@ -14,45 +14,33 @@ window {
     color: $foreground;
 
     & > * {
-        // padding: 20px 0px 20px 20px;
-        padding: 10px;
-        padding-right: 0;
+        padding: 6px;
+        padding-top: 0;
     }
-
 }
 
-.time-bar {
-    padding: 7px;
-}
-
-
-.space {
-    padding-top: 10px;
+.tbar .time {
+    background: rgba($background, 0.5);
+    border: 2px solid rgba($color2, 0.5);
+    color: rgba($foreground, 0.75);
 }
 
 .workspaces, .time, .network {
     background: $background;
-    border: 3px solid $foreground;
-    border-radius: 20px;
+    border: 2px solid $color2;
+    border-radius: 10px;
 }
 
-.workspaces {
-    padding: 7px 6px 7px 6px;
-    font-size: 15px;
+.workspaces, .network-label, .time {
+    font-size: 11px;
 }
 
-.network {
-    padding: 6px 4px 5px 4px;
-    font-size: 16px;
+.network-icon {
+    font-size: 11px;
+    padding-right: 4px;
 }
 
-.network-label {
-    padding: 10px 0 10px 0;
-    font-size: 14px;
-}
-
-.time {
-    padding: 7px 6px 7px 6px;
-    font-size: 13px;
+.workspaces, .network, .time  {
+    padding: 6px;
 }
 

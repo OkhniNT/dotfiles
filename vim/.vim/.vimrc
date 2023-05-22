@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-" Track the engine.
+" Snippets for vim
 Plug 'SirVer/ultisnips'
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -15,13 +15,19 @@ let g:UltiSnipsEditSplit="vertical"
 Plug 'tpope/vim-surround'
 
 " Goyo
-" Plug 'junegunn/goyo.vim'
-" let g:goyo_width = 150
-" let g:goyo_height = "100%"
-" let g:goyo_linenr = 0
-" nnoremap <leader>g :Goyo<CR>
+Plug 'junegunn/goyo.vim'
+let g:goyo_width = 100
+let g:goyo_height = "100%"
+let g:goyo_linenr = 0
+nnoremap <leader>g :Goyo<CR>
 
-" Yuck
+" Markdown highlighting
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
+
+let g:vim_markdown_folding_disabled = 1
+
+" Yuck file syntax highlighing
 Plug 'elkowar/yuck.vim'
 
 call plug#end()

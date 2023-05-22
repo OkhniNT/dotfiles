@@ -1,0 +1,88 @@
+;; Bar Window
+(defwindow bar
+  :monitor 0
+  :geometry (geometry :x "0%" 
+                      :y "0%" 
+                      :height "100%" 
+                      :width "45px"
+                      :anchor "center left")
+  :reserve (struts :distance "45px" :side "left")
+  :stacking "bottom"
+  :exclusive true
+  :focusable false
+  :namespace "eww-bar"
+
+  (bar)
+  )
+
+(defwindow tbar
+  :monitor 1
+  :geometry (geometry :x "0%" 
+                      :y "0%" 
+                      :height "5%" 
+                      :width "45px"
+                      :anchor "bottom left")
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  :namespace "time-bar"
+
+  (box :class "time-bar" (label :class "time" :text time :wrap true))
+  )
+
+(defwidget bar []
+  (box :orientation "v" :space-evenly true
+    (box :orientation "v" :halign "center" :valign "start" :vexpand true :space-evenly false :spacing 16
+      (network)
+      )
+
+    (box :orientation "v" :halign "center" :valign "center" :vexpand true
+      (workspaces)
+      )
+
+    (box :orientation "v" :halign "center" :valign "end" :vexpand true
+      (time)
+      )
+    )
+  )
+
+;; Workspaces
+(defwidget workspaces []
+    (literal :content workspace)
+  )
+;; (deflisten workspace `scripts/workspaces`)
+(deflisten workspace `scripts/hyprworkspaces`)
+
+;; Time
+(defwidget time []
+  (box :orientation "v" :halign "center" :space-evenly false :spacing 16
+  (label :class "time" :text time :wrap true)
+  (label :class "time" :text date :wrap true)
+  ))
+(defpoll time :interval "5s"
+  `date +%H%n%M%n%S`
+  )
+(defpoll date :interval "1m"
+  `date +%d%n%m%n%g`
+  )
+
+;; Network
+(defwidget network []
+  (box :class "network" :orientation "v" :halign "center" :space-evenly false
+    (label :text "")
+    (label :class "network-label" :angle 90 :text network)
+    ))
+;; (defwidget network []
+;;   (box :class "network" :orientation "v" :halign "center" :space-evenly false
+;;     (eventbox :onhover "eww update net-bool=true" :onhoverlost "eww update net-bool=false"
+;;       (box :orientation "v" :halign "center" :space-evenly false
+;;         (revealer :transition "slidedown" :reveal net-bool
+;;           (label :class "network-label" :angle 90 :text network)
+;;           )
+;;       ""))))
+(defpoll network :interval "15s" `nmcli connection show -active | awk 'NR==2{print $1}'`)
+(defvar net-bool false)
+
+(defwidget spacer []
+  (box " ")
+  )
