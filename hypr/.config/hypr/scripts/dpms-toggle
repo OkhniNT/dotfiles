@@ -1,0 +1,10 @@
+#!/bin/dash
+
+status="$(hyprctl monitors | grep -m 1 dpms)"
+
+sleep 1
+if [ "${status##* }" = 1 ]; then
+    hyprctl dispatch dpms off
+else
+    hyprctl dispatch dpms on
+fi
