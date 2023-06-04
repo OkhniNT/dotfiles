@@ -1,0 +1,37 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{base}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[margin=2.5cm]{geometry}
+\RequirePackage{microtype}
+\RequirePackage[none]{hyphenat}
+\RequirePackage[document]{ragged2e}
+\RequirePackage{titlesec}
+% \RequirePackage{fancyhdr}
+
+\titleformat{\section}{\bfseries\LARGE}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries\Large}{}{0em}{}
+\titleformat{\subsubsection}{\bfseries\large}{}{0em}{}
+
+\renewcommand{\maketitle}[1]{
+	\begin{center}
+		\huge #1
+	\end{center}
+}
+
+\pagestyle{plain}
+% \fancyhead{}
+% \lhead{\textbf{Class}}
+% \rhead{\textbf{Week}}
+
+\RequirePackage{import}
+\RequirePackage{pdfpages}
+\RequirePackage{transparent}
+\RequirePackage{xcolor}
+
+\newcommand{\incfig}[2][1]{%
+	\def\svgwidth{#1\columnwidth}
+	\import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1

@@ -1,0 +1,40 @@
+@import "colors.scss";
+
+$bg: rgba($background, 0.0);
+
+*{
+    all: unset;
+
+    font-family: monospace;
+    font-weight: 900;
+}
+
+window {
+    background: $bg;
+    color: $foreground;
+
+    & > * {
+        padding: 6px;
+        padding-top: 0;
+    }
+}
+
+.workspaces, .time, .battery, .network {
+    background: $background;
+    border: 2px solid $color2;
+    border-radius: 10px;
+}
+
+.workspaces, .battery-label, .network-label, .time {
+    font-size: 14px;
+}
+
+.battery-icon, .network-icon {
+    font-size: 14px;
+    padding-right: 4px;
+}
+
+.workspaces, .battery, .network, .time  {
+    padding: 6px;
+}
+
