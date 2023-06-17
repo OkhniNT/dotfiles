@@ -6,7 +6,6 @@
                       :height "10px" 
                       :width "100%"
                       :anchor "center bottom")
-  :reserve (struts :distance "45px" :side "left")
   :stacking "bottom"
   :exclusive true
   :focusable false
@@ -20,14 +19,31 @@
   :geometry (geometry :x "0%" 
                       :y "0%" 
                       :height "10px" 
-                      :width "13%"
+                      :width "20%"
                       :anchor "right bottom")
   :stacking "overlay"
-  :exclusive true
+  :exclusive false
   :focusable false
   :namespace "eww-tbar"
   (box :class "tbar" :halign "end"
     (time)
+    )
+  )
+
+;; Workspace Bar
+(defwindow wbar
+  :monitor 1
+  :geometry (geometry :x "0%" 
+                      :y "0%" 
+                      :height "10px" 
+                      :width "20%"
+                      :anchor "center bottom")
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  :namespace "eww-wbar"
+  (box :class "wbar" :halign "center"
+    (workspaces)
     )
   )
 

@@ -19,10 +19,10 @@ window {
     }
 }
 
-.tbar .time {
-    background: rgba($background, 0.5);
-    border: 2px solid rgba($color2, 0.5);
-    color: rgba($foreground, 0.75);
+.tbar .time, .wbar .workspaces {
+    background: rgba($background, 0.70);
+    border: 2px solid rgba($color2, 0.20);
+    color: rgba($foreground, 0.90);
 }
 
 .workspaces, .time, .network {
