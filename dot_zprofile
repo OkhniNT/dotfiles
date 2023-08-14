@@ -3,6 +3,8 @@ if [[ $(lspci | grep VGA) == *Intel* ]]; then
     export PC="laptop"
 else
     export PC="desktop"
+    export NVD_BACKEND=direct
+    export LIBVA_DRIVER_NAME=nvidia
 fi
 
 # Path
