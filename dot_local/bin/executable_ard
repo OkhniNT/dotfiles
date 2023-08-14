@@ -1,0 +1,27 @@
+#!/bin/dash
+
+case $1 in
+    -c | --compile)
+        arduino-cli compile --fqbn $2 $3
+        ;;
+    -u | --upload)
+        arduino-cli upload -p /dev/ttyUSB0 --fqbn $2 $3
+        ;;
+    -U | --upcomp)
+        arduino-cli compile --fqbn $2 $3 && arduino-cli upload -p /dev/ttyUSB0 --fqbn $2 $3
+        ;;
+    -m | --monitor)
+        arduino-cli monitor -p /dev/ttyUSB0
+        ;;
+    *)
+        echo "Usage:"
+        echo "  ar [-c|-u] [fqbn] [options] [file name]"
+        echo
+        echo "Available Commands:"
+        echo "  -c | --compile"
+        echo "  -u | --upload"
+        echo "  -m | --monitor"
+        echo "  -U | --upcomp"
+        echo
+        ;;
+esac

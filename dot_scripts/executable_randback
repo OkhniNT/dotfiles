@@ -1,0 +1,14 @@
+#!/bin/zsh
+backdir="${HOME}/media/pictures/backgrounds"
+numbacks=$(ls -1 $backdir | wc -l)
+numrandback=$(( 1 + RANDOM % numbacks))
+randback=$(ls -1 $backdir | awk NR==$numrandback)
+
+case $1 in
+    -l)
+        chbg -l $backdir/$randback
+        ;;
+    *)
+        chbg $backdir/$randback
+        ;;
+esac

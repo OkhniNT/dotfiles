@@ -1,0 +1,5 @@
+#!/bin/sh
+
+spotify-launcher &
+sleep 2
+rm -r ~/Downloads

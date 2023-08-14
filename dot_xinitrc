@@ -1,0 +1,5 @@
+picom -b
+
+chbg $HOME/.config/back.png &
+
+exec awesome --no-argb

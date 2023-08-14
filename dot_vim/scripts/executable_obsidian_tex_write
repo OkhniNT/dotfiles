@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+cp ~/.vim/scripts/otex_temp /tmp/otex.tex
+st -g 100x20 -c "popterm" vim /tmp/otex.tex 2> /dev/null
+echo -E -n "$(cat /tmp/otex.tex | sed '1d; $d')"
