@@ -74,7 +74,6 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, "d", function () awful.spawn("rofi -show run") end, {description = "run rofi", group = "launcher"}),
     awful.key({ modkey }, "F2", function () awful.spawn("firefox") end, {description = "open firefox", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "s", function() awful.spawn("shotclip") end, {description = "screenshot selected area", group = "launcher"}),
-    awful.key({ modkey }, "Insert", function () awful.spawn.with_shell("xdotool type 🐛") end),
 })
 
 -- Media keys
