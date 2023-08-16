@@ -1,4 +1,8 @@
-picom -b
+if [ $PC == laptop ]
+    picom -b --config ~/.config/picom/picom_laptop.conf
+else
+    picom -b --config ~/.config/picom/picom_desktop.conf
+fi
 
 chbg $HOME/.config/back.png &
 
