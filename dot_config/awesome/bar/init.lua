@@ -29,7 +29,7 @@ mytextclock = wibox.widget.textclock()
 
 if ( pc == "laptop" ) then
     -- Create a battery widget
-    mybattery = awful.widget.watch('sh -c "echo $(cat /sys/class/power_supply/BAT0/capacity)%"', 60)
+    mybattery = awful.widget.watch('sh -c "~/.config/awesome/bar/scripts/batcheck"', 60)
 end
 
 -- @DOC_FOR_EACH_SCREEN@
@@ -76,16 +76,16 @@ screen.connect_signal("request::desktop_decoration", function(s)
     -- @TASKLIST_BUTTON@
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = {
-            awful.button({ }, 1, function (c)
-                c:activate { context = "tasklist", action = "toggle_minimization" }
-            end),
-            awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
-            awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
-            awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
-        }
+            screen  = s,
+            filter  = awful.widget.tasklist.filter.currenttags,
+            buttons = {
+                awful.button({ }, 1, function (c)
+                    c:activate { context = "tasklist", action = "toggle_minimization" }
+                end),
+                awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
+                awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
+                awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
+            },
     }
 
     -- @DOC_WIBAR@
@@ -97,6 +97,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
             -- @DOC_SETUP_WIDGETS@
             widget   = {
                 layout = wibox.layout.align.horizontal,
+                expand = "none",
                 { -- Left widgets
                     layout = wibox.layout.fixed.horizontal,
                     mypadding,
@@ -125,6 +126,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
             -- @DOC_SETUP_WIDGETS@
             widget   = {
                 layout = wibox.layout.align.horizontal,
+                expand = "none",
                 { -- Left widgets
                     layout = wibox.layout.fixed.horizontal,
                     mypadding,
