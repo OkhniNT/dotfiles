@@ -1,4 +1,4 @@
-if [ $PC == laptop ]
+if [ $PC == laptop ]; then
     picom -b --config ~/.config/picom/picom_laptop.conf
 else
     picom -b --config ~/.config/picom/picom_desktop.conf
