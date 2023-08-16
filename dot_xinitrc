@@ -1,7 +1,7 @@
 if [ $PC == laptop ]; then
-    picom -b --config ~/.config/picom/picom_laptop.conf
+    picom -b --config ~/.config/picom/picom-laptop.conf
 else
-    picom -b --config ~/.config/picom/picom_desktop.conf
+    picom -b --config ~/.config/picom/picom-desktop.conf
 fi
 
 chbg $HOME/.config/back.png &
