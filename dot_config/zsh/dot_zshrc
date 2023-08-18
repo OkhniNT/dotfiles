@@ -27,6 +27,7 @@ alias bcon='bluetoothctl power on; bluetoothctl devices | rofi -dmenu | cut -d "
 alias v='vim'
 alias vf='vifmrun'
 alias vifm='vifmrun'
+alias view='vim -R -'
 
 alias cdf='cd "$(find * -type d | fzf --reverse)"'
 alias conf='cd "$(find ~/.config* | fzf --reverse)"'
