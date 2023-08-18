@@ -12,24 +12,38 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {{}}
 
-theme.font          = "monospace 9"
+theme.font = "Monospace Bold 9"
 
-theme.bg_normal     = "{background}"
-theme.bg_focus      = "{color3}"
-theme.bg_urgent     = "{color1}"
-theme.bg_minimize   = "{background}"
-theme.bg_systray    = theme.bg_normal
+-- General colours
+theme.bg_normal = "{background}"
+theme.bg_focus = "{color3}"
+theme.bg_urgent = "{color1}"
+theme.bg_minimize = "{background}"
+theme.bg_systray = theme.bg_normal
 
-theme.fg_normal     = "{color15}"
-theme.fg_focus      = "{background}"
-theme.fg_urgent     = "{foreground}"
-theme.fg_minimize   = "{foreground}"
+theme.fg_normal = "{color15}"
+theme.fg_focus = "{background}"
+theme.fg_urgent = "{foreground}"
+theme.fg_minimize = "{foreground}"
 
-theme.useless_gap         = dpi(4)
-theme.border_width        = dpi(2)
+theme.useless_gap = dpi(4)
+theme.border_width = dpi(2)
 theme.border_color_normal = "{background}"
 theme.border_color_active = "{color3}"
 theme.border_color_marked = "{color1}"
+
+-- Notification theming
+theme.notification_bg = "{color2}"
+theme.notification_fg = "{background}"
+theme.notification_border_color = "{background}"
+
+-- Set different colors for urgent notifications.
+rnotification.connect_signal('request::rules', function()
+    rnotification.append_rule {{
+        rule       = {{ urgency = 'critical' }},
+        properties = {{ bg = '#ff0000', fg = '#ffffff' }}
+    }}
+end)
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
@@ -54,10 +68,10 @@ theme.menu_width  = dpi(100)
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 
--- Define the image to load
+-- Wallpaper
 theme.wallpaper = themes_path.."default/background.png"
 
--- You can use your own layout icons like this:
+-- Layout Icons
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
 theme.layout_fairv = themes_path.."default/layouts/fairvw.png"
 theme.layout_floating  = themes_path.."default/layouts/floatingw.png"
@@ -81,13 +95,5 @@ theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
-
--- Set different colors for urgent notifications.
-rnotification.connect_signal('request::rules', function()
-    rnotification.append_rule {{
-        rule       = {{ urgency = 'critical' }},
-        properties = {{ bg = '#ff0000', fg = '#ffffff' }}
-    }}
-end)
 
 return theme
