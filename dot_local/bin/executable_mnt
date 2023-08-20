@@ -1,0 +1,15 @@
+#!/bin/sh
+
+option="$(echo -e 'Mount\nUnmount' | rofi -dmenu)"
+disk="$(lsblk -l -n -o NAME,MOUNTPOINT | sed '/[a-z]\s/d;/^n/d' | rofi -dmenu | cut -d' ' -f1)"
+
+if ! [[ $disk == "" ]]; then
+    case $option in
+        "Mount")
+            udisksctl mount -b /dev/$disk
+            ;;
+        "Unmount")
+            udisksctl unmount -b /dev/$disk
+            ;;
+    esac
+fi
