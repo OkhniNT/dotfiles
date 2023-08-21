@@ -460,7 +460,7 @@ nnoremap A cw
 nnoremap cv :rename<CR>
 
 " Open console in current directory
-nnoremap ,t :!xterm &<cr>
+nnoremap ,t :!st &<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
@@ -507,7 +507,7 @@ nnoremap <f8> :delete<cr>
 nnoremap bb :!chbg %f<CR>
 nnoremap bl :!chbg -l %f<CR>
 nnoremap gG :!gimp %f<CR>
-nnoremap gS :!st &<CR>
 nnoremap gc :!unoconv -f pdf %f<CR>
+nnoremap gd :!dragon %f<CR>
 
 fileview *[^/] tree %c
