@@ -35,7 +35,7 @@ theme.border_color_marked = "{color1}"
 -- Notification theming
 theme.notification_bg = "{color2}"
 theme.notification_fg = "{background}"
-theme.notification_border_color = "{background}"
+theme.notification_border_color = "{color3}"
 
 -- Set different colors for urgent notifications.
 rnotification.connect_signal('request::rules', function()
