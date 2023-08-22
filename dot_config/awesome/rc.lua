@@ -43,7 +43,7 @@ beautiful.init(gears.filesystem.get_xdg_cache_home() .. "wal/theme.lua")
 -- {{{ Notifications
 
 naughty.config.defaults.timeout = 2
-naughty.config.defaults.border_width = dpi(3)
+naughty.config.defaults.border_width = dpi(4)
 naughty.config.defaults.margin = dpi(6)
 
 ruled.notification.connect_signal('request::rules', function()
