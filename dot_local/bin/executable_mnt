@@ -1,6 +1,10 @@
 #!/bin/sh
 
 option="$(echo -e 'Mount\nUnmount' | rofi -dmenu)"
+if [[ $option == "" ]]; then
+    exit 1
+fi
+
 disk="$(lsblk -l -n -o NAME,MOUNTPOINT | sed '/[a-z]\s/d;/^n/d' | rofi -dmenu | cut -d' ' -f1)"
 
 if ! [[ $disk == "" ]]; then
