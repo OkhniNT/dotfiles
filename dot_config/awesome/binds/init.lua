@@ -73,7 +73,8 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, "r", function () awful.spawn(terminal .. " -e vifmrun") end, {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey }, "d", function () awful.spawn("rofi -show run") end, {description = "run rofi", group = "launcher"}),
     awful.key({ modkey }, "F2", function () awful.spawn("firefox") end, {description = "open firefox", group = "launcher"}),
-    awful.key({ modkey, "Shift" }, "s", function() awful.spawn("shotclip") end, {description = "screenshot selected area", group = "launcher"}),
+    awful.key({ modkey, "Shift" }, "s", function () awful.spawn("shotclip") end, {description = "screenshot selected area", group = "launcher"}),
+    awful.key({ modkey, "Shift" }, "m", function () awful.spawn("mnt") end, {description = "mount external storage", group = "launcher"}),
 })
 
 -- Media keys
@@ -147,7 +148,7 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, "j", function () awful.client.focus.byidx( 1) end, {description = "focus next by index", group = "client"}),
     awful.key({ modkey }, "k", function () awful.client.focus.byidx(-1) end, {description = "focus previous by index", group = "client"}),
     awful.key({ modkey }, "Tab", awful.tag.history.restore, {description = "go back", group = "tag"}),
-    awful.key({ modkey }, ";", function () awful.screen.focus_relative(1) end, {description = "focus the next screen", group = "screen"}),
+    awful.key({ modkey }, "grave", function () awful.spawn("xdotool key XF86Ungrab; sleep 0.1") awful.screen.focus_relative(1) end, {description = "focus the next screen", group = "screen"}),
 })
 
 -- @DOC_NUMBER_KEYBINDINGS@
