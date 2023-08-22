@@ -1,8 +1,11 @@
 if [ $PC == laptop ]; then
     picom -b --config ~/.config/picom/picom-laptop.conf
 else
+    nvidia-settings -l --config="$HOME/.config/nvidia/settings"
     picom -b --config ~/.config/picom/picom-desktop.conf
 fi
+
+setxkbmap -option grab:break_actions
 
 chbg $HOME/.config/back.png &
 
