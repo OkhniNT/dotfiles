@@ -94,7 +94,7 @@ awful.keyboard.append_global_keybindings({
 client.connect_signal("request::default_keybindings", function()
     awful.keyboard.append_client_keybindings({
         awful.key({ modkey }, "q", function (c) c:kill() end, {description = "close", group = "client"}),
-        awful.key({ modkey }, "o", function (c) c:move_to_screen() end, {description = "move to screen", group = "client"}),
+        awful.key({ modkey, "Shift" }, "grave", function (c) c:move_to_screen() end, {description = "move to screen", group = "client"}),
 
         awful.key({ modkey }, "f", function (c)
             c.fullscreen = not c.fullscreen
