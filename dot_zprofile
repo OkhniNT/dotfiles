@@ -8,7 +8,7 @@ else
 fi
 
 # Path
-export PATH="$PATH:$HOME/.scripts/:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # Language environment
 export LC_CTYPE="en_AU.UTF-8"
