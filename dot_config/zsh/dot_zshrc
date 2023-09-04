@@ -32,6 +32,7 @@ alias view='vim -R -'
 alias cdf='cd "$(find * -type d | fzf --reverse)"'
 alias conf='cd "$(find ~/.config* | fzf --reverse)"'
 
+alias doctopdf='libreoffice --headless --convert-to pdf'
 alias copy='xclip -selection clipboard'
 alias ntp='sudo ntpdate 0.au.pool.ntp.org'
 alias off='shutdown -h now'
