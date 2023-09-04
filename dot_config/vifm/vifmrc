@@ -126,7 +126,8 @@ mark g ~/git
 mark y ~/documents/obsidian/University
 mark b ~/media/pictures/backgrounds
 mark m /mnt
-mark s ~/.scripts
+mark l ~/.local
+mark s ~/.local/bin
 mark c ~/.config
 mark z ~/.config/vifm
 
