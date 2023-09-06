@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 readonly ID_PREVIEW="preview"
 
 if [ -e "$FIFO_UEBERZUG" ]; then
