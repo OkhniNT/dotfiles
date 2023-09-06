@@ -7,12 +7,12 @@
 pacman -S base base-devel linux linux-firmware linux-headers archlinux-keyring \
 grub vim networkmanager git chezmoi man-db man-pages texinfo clang ntp cpupower \
 vifm p7zip unzip unrar dosfstools exfatprogs ntfs-3g xorg-server xorg-xinit \
-xorg-xinput xorg-prop xorg-xset xorg-xsetroot xorg-xrdb xorg-xev
+xorg-xinput xorg-xprop xorg-xset xorg-xsetroot xorg-xrdb xorg-xev
 
 ### Secondary
 
 pacman -S rofi ueberzug feh htop maim sxiv zathura python-pywal fzf fontconfig \
-picom xdg-user-dirs flatpak xdg-desktop-portal-gtk xdg-desktop-portal udisks
+picom xdg-user-dirs flatpak xdg-desktop-portal-gtk xdg-desktop-portal udisks2
 
 ### Supplementary
 
@@ -28,21 +28,21 @@ obsidian qbittorrent r vlc libreoffice rustup thunar
 
 ## Flatpak
 
-flatpak install -u firefox spotify steam
+flatpak install -u firefox spotify steam discord
 
 
 ## AUR
 
 git clone https://aur.archlinux.org/paru.git; cd paru; makepkg -si
-paru -S awesome-git pandoc-bin mullvad-vpn discord_arch_electron
+paru -S awesome-git pandoc-bin mullvad-vpn
 
 
 ## System Specific
 
 ### Laptop
 
-pacman -S intel-ucode light powertop tlp xf86-video-intel mesa vulkan-intel \
-bluez bluez-utils 
+pacman -S intel-ucode light powertop tlp xf86-video-intel libva-intel-driver mesa vulkan-intel \
+bluez bluez-utils bc
 
 ### Desktop
 
