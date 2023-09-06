@@ -17,6 +17,8 @@ require 'rules'
 
 require("awful.autofocus")
 
+awful.spawn.once("xdg-portal-nuke")
+
 -- {{{ Error handling
 -- @DOC_ERROR_HANDLING@
 naughty.connect_signal("request::display_error", function(message, startup)
