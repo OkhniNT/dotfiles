@@ -93,8 +93,8 @@ textbox {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     4;
-    lines:                       3;
+    columns:                     2;
+    lines:                       5;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
