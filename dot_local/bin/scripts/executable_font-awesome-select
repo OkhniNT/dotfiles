@@ -1,0 +1,10 @@
+#!/bin/dash
+
+icon="$(cat ~/.local/bin/scripts/font-awesome-icons | rofi -dmenu | cut -d ' ' -f1)"
+
+if [ "$icon" = "" ]; then
+    exit 1
+fi
+
+echo $icon | xclip -selection clipboard -r
+notify-send "Emoji copied to clipboard" "$icon"
