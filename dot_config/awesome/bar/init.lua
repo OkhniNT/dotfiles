@@ -22,7 +22,24 @@ tag.connect_signal("request::default_layouts", function()
 end)
 
 -- Create a padding widget
-mypadding = wibox.widget.textbox(" | ")
+mypadding = wibox.widget {
+    layout = wibox.layout.fixed.horizontal,
+    wibox.widget.separator {
+        orientation = "vertical",
+        thickness = 0,
+        forced_width = 8,
+    },
+    wibox.widget.separator {
+        orientation = "vertical",
+        thickness = 2,
+        forced_width = 2,
+    },
+    wibox.widget.separator {
+        orientation = "vertical",
+        thickness = 0,
+        forced_width = 8,
+    },
+}
 
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
@@ -35,7 +52,7 @@ end
 -- @DOC_FOR_EACH_SCREEN@
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", }, s, awful.layout.layouts[1])
+    awful.tag({ "", "", "", "", "" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -55,22 +72,26 @@ screen.connect_signal("request::desktop_decoration", function(s)
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
-        buttons = {
-            awful.button({ }, 1, function(t) t:view_only() end),
-            awful.button({ modkey }, 1, function(t)
-                                            if client.focus then
-                                                client.focus:move_to_tag(t)
-                                            end
-                                        end),
-            awful.button({ }, 3, awful.tag.viewtoggle),
-            awful.button({ modkey }, 3, function(t)
-                                            if client.focus then
-                                                client.focus:toggle_tag(t)
-                                            end
-                                        end),
-            awful.button({ }, 4, function(t) awful.tag.viewprev(t.screen) end),
-            awful.button({ }, 5, function(t) awful.tag.viewnext(t.screen) end),
-        }
+        style   = {
+            shape       = function (cr, w, h) gears.shape.partial_squircle (cr, w, h, false, true, true, true, 3) end,
+            shape_empty = function (cr, w, h) gears.shape.squircle (cr, w, h, 3) end,
+        },
+        buttons = taglist_buttons,
+        widget_template = {
+            {
+                {
+                    id = "text_role",
+                    valign = "center",
+                    halign = "center",
+                    widget = wibox.widget.textbox,
+                },
+                forced_width = 17,
+                id = "background_role",
+                widget = wibox.container.background,
+            },
+            margins = 2,
+            widget = wibox.container.margin,
+        },
     }
 
     -- @TASKLIST_BUTTON@
@@ -123,6 +144,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         s.mywibox = awful.wibar {
             position = "bottom",
             screen   = s,
+            height = 21,
             -- @DOC_SETUP_WIDGETS@
             widget   = {
                 layout = wibox.layout.align.horizontal,
@@ -131,10 +153,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
                     layout = wibox.layout.fixed.horizontal,
                     mypadding,
                     s.mytaglist,
-                    s.mypromptbox,
                     mypadding,
+                    s.mypromptbox,
                 },
-                s.mytasklist, -- Middle widget
+                { -- Middle widget
+                    layout = wibox.layout.fixed.horizontal,
+                    s.mytasklist,
+                },
                 { -- Right widgets
                     layout = wibox.layout.fixed.horizontal,
                     wibox.widget.systray(),
