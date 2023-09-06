@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 backdir="${HOME}/media/pictures/backgrounds"
 numbacks=$(ls -1 $backdir | wc -l)
 numrandback=$(( 1 + RANDOM % numbacks))
