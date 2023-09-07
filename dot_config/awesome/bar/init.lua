@@ -91,7 +91,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         wibar_height = 21
 
         -- Define wibar right-side widgets
-        wibar_right_widgets = wibar.widget {
+        wibar_right_widgets = wibox.widget {
             wibox.widget.systray(),
             mypadding,
             mytextclock,
