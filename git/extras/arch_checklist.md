@@ -6,8 +6,8 @@
 
 pacman -S base base-devel linux linux-firmware linux-headers archlinux-keyring \
 grub vim networkmanager git chezmoi man-db man-pages texinfo clang ntp cpupower \
-vifm p7zip unzip unrar dosfstools exfatprogs ntfs-3g xorg-server xorg-xinit \
-xorg-xinput xorg-xprop xorg-xset xorg-xsetroot xorg-xrdb xorg-xev
+xclip vifm p7zip unzip unrar dosfstools exfatprogs ntfs-3g xorg-server \
+xorg-xinit xorg-xinput xorg-xprop xorg-xset xorg-xsetroot xorg-xrdb xorg-xev
 
 ### Secondary
 
