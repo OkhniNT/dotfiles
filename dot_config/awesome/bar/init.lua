@@ -68,6 +68,40 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 awful.button({ }, 5, function () awful.layout.inc( 1) end),
             }}, 3, 3, 3, 3)
 
+    if ( pc == "laptop" ) then
+        -- Define variables
+        tag_width = 18
+        wibar_height = 22
+
+        -- Define wibar right-side widgets
+        wibar_right_widgets = wibox.widget {
+            wibox.widget.systray(),
+            mypadding,
+            mybattery,
+            mypadding,
+            mytextclock,
+            mypadding,
+            s.mylayoutbox,
+            mypadding,
+            layout = wibox.layout.fixed.horizontal,
+        }
+    else
+        -- Define variables
+        tag_width = 17
+        wibar_height = 21
+
+        -- Define wibar right-side widgets
+        wibar_right_widgets = wibar.widget {
+            wibox.widget.systray(),
+            mypadding,
+            mytextclock,
+            mypadding,
+            s.mylayoutbox,
+            mypadding,
+            layout = wibox.layout.fixed.horizontal,
+        }
+    end
+
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist {
         screen  = s,
@@ -77,15 +111,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
             shape_empty = function (cr, w, h) gears.shape.squircle (cr, w, h, 3) end,
         },
         buttons = taglist_buttons,
-        widget_template = {
-            {
-                {
+        widget_template = {{{
                     id = "text_role",
                     valign = "center",
                     halign = "center",
                     widget = wibox.widget.textbox,
                 },
-                forced_width = 17,
+                forced_width = tag_width,
                 id = "background_role",
                 widget = wibox.container.background,
             },
@@ -115,60 +147,46 @@ screen.connect_signal("request::desktop_decoration", function(s)
         s.mywibox = awful.wibar {
             position = "bottom",
             screen   = s,
+            height = wibar_height,
             -- @DOC_SETUP_WIDGETS@
             widget   = {
-                layout = wibox.layout.align.horizontal,
-                expand = "none",
                 { -- Left widgets
-                    layout = wibox.layout.fixed.horizontal,
                     mypadding,
                     s.mytaglist,
+                    mypadding,
                     s.mypromptbox,
-                    mypadding,
-                },
-                s.mytasklist, -- Middle widget
-                { -- Right widgets
                     layout = wibox.layout.fixed.horizontal,
-                    wibox.widget.systray(),
-                    mypadding,
-                    mybattery,
-                    mypadding,
-                    mytextclock,
-                    mypadding,
-                    s.mylayoutbox,
-                    mypadding,
                 },
+                { -- Middle widget
+                    s.mytasklist,
+                    layout = wibox.layout.fixed.horizontal,
+                },
+                wibar_right_widgets,
+                expand = "none",
+                layout = wibox.layout.align.horizontal,
             }
         }
     else
         s.mywibox = awful.wibar {
             position = "bottom",
             screen   = s,
-            height = 21,
+            height = wibar_height,
             -- @DOC_SETUP_WIDGETS@
             widget   = {
-                layout = wibox.layout.align.horizontal,
-                expand = "none",
                 { -- Left widgets
-                    layout = wibox.layout.fixed.horizontal,
                     mypadding,
                     s.mytaglist,
                     mypadding,
                     s.mypromptbox,
+                    layout = wibox.layout.fixed.horizontal,
                 },
                 { -- Middle widget
-                    layout = wibox.layout.fixed.horizontal,
                     s.mytasklist,
-                },
-                { -- Right widgets
                     layout = wibox.layout.fixed.horizontal,
-                    wibox.widget.systray(),
-                    mypadding,
-                    mytextclock,
-                    mypadding,
-                    s.mylayoutbox,
-                    mypadding,
                 },
+                wibar_right_widgets,
+                expand = "none",
+                layout = wibox.layout.align.horizontal,
             }
         }
     end
