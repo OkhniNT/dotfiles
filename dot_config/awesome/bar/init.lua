@@ -23,11 +23,10 @@ end)
 
 -- Create a padding widget
 mypadding = wibox.widget {
-    layout = wibox.layout.fixed.horizontal,
     wibox.widget.separator {
         orientation = "vertical",
         thickness = 0,
-        forced_width = 8,
+        forced_width = 7,
     },
     wibox.widget.separator {
         orientation = "vertical",
@@ -39,6 +38,7 @@ mypadding = wibox.widget {
         thickness = 0,
         forced_width = 8,
     },
+    layout = wibox.layout.fixed.horizontal,
 }
 
 -- Create a textclock widget
