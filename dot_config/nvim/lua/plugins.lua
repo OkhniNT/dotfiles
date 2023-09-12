@@ -16,6 +16,7 @@ plugins = {
     { 'kylechui/nvim-surround', config = function () require('nvim-surround').setup() end },
     { 'ms-jpq/coq-nvim', branch = 'coq' },
     { 'rebelot/kanagawa.nvim' },
+    { 'cohama/lexima.vim' },
 }
 opts = {}
 
