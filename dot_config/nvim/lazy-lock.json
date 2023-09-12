@@ -4,6 +4,7 @@
   "lazy.nvim": { "branch": "main", "commit": "2a9354c7d2368d78cbd5575a51a2af5bd8a6ad01" },
   "lexima.vim": { "branch": "master", "commit": "b1e1b1bde07c1efc97288c98c5912eaa644ee6e1" },
   "nvim-surround": { "branch": "main", "commit": "1c2ef599abeeb98e40706830bcd27e90e259367a" },
+  "nvim-treesitter": { "branch": "master", "commit": "0ba881b7a2af0e24962e4522cf15ebd642261a90" },
   "plenary.nvim": { "branch": "master", "commit": "0232372b906f275f76ac42029eba25eaf95e76b9" },
   "ripgrep": { "branch": "master", "commit": "d2a409f89f1eb8e3ad3990aeb1fff944289534f2" },
   "telescope.nvim": { "branch": "master", "commit": "a19770625aed49ad2a9f591a5e3946707f7359f6" }
