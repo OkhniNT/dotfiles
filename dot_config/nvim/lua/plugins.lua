@@ -17,7 +17,15 @@ plugins = {
     { 'ms-jpq/coq-nvim', branch = 'coq' },
     { 'rebelot/kanagawa.nvim' },
     { 'cohama/lexima.vim' },
-}
-opts = {}
+    { 'nvim-treesitter/nvim-treesitter' , build = ':TSUpdate', config = function ()
+        local configs = require('nvim-treesitter.configs')
 
-require("lazy").setup(plugins, opts)
+        configs.setup({
+            ensure_installed = { 'c', 'python', 'lua', 'latex', 'markdown', 'markdown_inline', 'diff' },
+            highlight = { enable = true },
+            indent = { enable = true },
+        })
+    end },
+}
+
+require("lazy").setup(plugins)
