@@ -20,9 +20,10 @@ vim.keymap.set('n', '<leader>csc', ':COQsnips compile <CR>', { noremap = true })
 -- redirect viminfo to .config
 vim.opt.viminfo:append('n~/.config/nvim/viminfo')
 -- colorscheme
-vim.cmd.colorscheme('evening')
+vim.cmd.colorscheme('kanagawa')
 vim.cmd.highlight({ 'Normal', 'guibg=NONE', 'ctermbg=NONE' })
 vim.cmd.highlight({ 'EndOfBuffer', 'guibg=NONE', 'ctermbg=NONE' })
+vim.cmd.highlight({ 'LineNr', 'guibg=NONE', 'ctermbg=NONE' })
 -- set number lines
 vim.opt.number = true
 vim.opt.relativenumber = true
