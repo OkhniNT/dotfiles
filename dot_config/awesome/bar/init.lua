@@ -70,8 +70,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     if ( pc == "laptop" ) then
         -- Define variables
-        wibar_height = 24
-        tag_margin = 4
+        wibar_height = 25
+        tag_margin = 3
         tag_width = wibar_height
 
         -- Define wibar right-side widgets
