@@ -1,8 +1,0 @@
-#!/bin/dash
-
-file=$(ls Figures/ | rofi -dmenu)
-
-echo '    \\begin{figure}[ht]'
-echo '        \\centering'
-echo "        \\includegraphics[]{Figures/$file}"
-echo '    \\end{figure}'
