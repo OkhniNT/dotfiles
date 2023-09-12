@@ -1,6 +1,6 @@
 {
+  "coq-nvim": { "branch": "coq", "commit": "e7304683400a65e3f85e6973fcc2ad2a1bc811e6" },
   "lazy.nvim": { "branch": "main", "commit": "2a9354c7d2368d78cbd5575a51a2af5bd8a6ad01" },
-  "luasnip": { "branch": "master", "commit": "ea7d7ea510c641c4f15042becd27f35b3e5b3c2b" },
   "nvim-surround": { "branch": "main", "commit": "1c2ef599abeeb98e40706830bcd27e90e259367a" },
   "plenary.nvim": { "branch": "master", "commit": "0232372b906f275f76ac42029eba25eaf95e76b9" },
   "ripgrep": { "branch": "master", "commit": "d2a409f89f1eb8e3ad3990aeb1fff944289534f2" },
