@@ -9,14 +9,19 @@ local telescope = require('telescope.builtin')
 vim.keymap.set('n', '<leader>tf', telescope.find_files, { noremap = true })
 vim.keymap.set('n', '<leader>tg', telescope.live_grep, { noremap = true })
 vim.keymap.set('n', '<leader>tb', telescope.buffers, { noremap = true })
+-- coq config
+vim.keymap.set('n', '<leader>cx', ':COQnow -s <CR>', { noremap = true })
+vim.keymap.set('n', '<leader>cse', ':COQsnips edit <CR><CR>', { noremap = true })
+vim.keymap.set('n', '<leader>csc', ':COQsnips compile <CR>', { noremap = true })
 
 -- Editor Configuation --
 
 -- redirect viminfo to .config
 vim.opt.viminfo:append('n~/.config/nvim/viminfo')
 -- colorscheme
-vim.cmd.colorscheme('torte')
+vim.cmd.colorscheme('evening')
 vim.cmd.highlight({ 'Normal', 'guibg=NONE', 'ctermbg=NONE' })
+vim.cmd.highlight({ 'EndOfBuffer', 'guibg=NONE', 'ctermbg=NONE' })
 -- set number lines
 vim.opt.number = true
 vim.opt.relativenumber = true
