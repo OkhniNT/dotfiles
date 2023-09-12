@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 plugins = {
     { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' , 'burntsushi/ripgrep' } },
     { 'kylechui/nvim-surround', config = function () require('nvim-surround').setup() end },
-    { 'l3mon4d3/luasnip' }
+    { 'ms-jpq/coq-nvim', branch = 'coq' },
 }
 opts = {}
 
