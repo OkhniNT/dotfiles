@@ -10,6 +10,7 @@ vim.keymap.set('n', '<leader>tf', telescope.find_files, { noremap = true })
 vim.keymap.set('n', '<leader>tg', telescope.live_grep, { noremap = true })
 vim.keymap.set('n', '<leader>tb', telescope.buffers, { noremap = true })
 -- coq config
+vim.g.coq_settings = { ['keymap.jump_to_mark'] = '<c-a>' }
 vim.keymap.set('n', '<leader>cx', ':COQnow -s <CR>', { noremap = true })
 vim.keymap.set('n', '<leader>cse', ':COQsnips edit <CR><CR>', { noremap = true })
 vim.keymap.set('n', '<leader>csc', ':COQsnips compile <CR>', { noremap = true })
@@ -44,8 +45,8 @@ vim.keymap.set('n', '<F7>', ':setlocal spell! spelllang=en_au <CR>', { noremap =
 vim.keymap.set('n', '<F8>', ':set list! <CR>', { noremap = true })
 vim.keymap.set('n', '<F9>', ':redraw! <CR>', { noremap = true })
 -- latex figures
-vim.keymap.set('i', '<C-f>', [[<Esc>:silent exec '.!inkscape-figures create "'.getline('.').'" "figures"'<CR><CR>:w<CR>]], { noremap = true })
-vim.keymap.set('n', '<C-f>', [[:silent exec '!inkscape-figures edit "figures" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>]], { noremap = true })
+vim.keymap.set('i', '<c-f>', [[<Esc>:silent exec '.!inkscape-figures create "'.getline('.').'" "figures"'<CR><CR>:w<CR>]], { noremap = true })
+vim.keymap.set('n', '<c-f>', [[:silent exec '!inkscape-figures edit "figures" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>]], { noremap = true })
 vim.keymap.set('n', '<leader>f', [[:silent exec '.!$HOME/.config/nvim/scripts/latex_diagrams'<CR><CR>:w<CR><CR>f[]], { noremap = true })
 -- vimdiff
 vim.keymap.set('n', '<leader>dp', ':diffput <CR>', { noremap = true })
