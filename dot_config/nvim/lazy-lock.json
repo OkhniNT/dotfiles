@@ -2,6 +2,7 @@
   "coq-nvim": { "branch": "coq", "commit": "e7304683400a65e3f85e6973fcc2ad2a1bc811e6" },
   "kanagawa.nvim": { "branch": "master", "commit": "0a24e504a3a278849ad0aef31cd6dd24c73ca3db" },
   "lazy.nvim": { "branch": "main", "commit": "2a9354c7d2368d78cbd5575a51a2af5bd8a6ad01" },
+  "lexima.vim": { "branch": "master", "commit": "b1e1b1bde07c1efc97288c98c5912eaa644ee6e1" },
   "nvim-surround": { "branch": "main", "commit": "1c2ef599abeeb98e40706830bcd27e90e259367a" },
   "plenary.nvim": { "branch": "master", "commit": "0232372b906f275f76ac42029eba25eaf95e76b9" },
   "ripgrep": { "branch": "master", "commit": "d2a409f89f1eb8e3ad3990aeb1fff944289534f2" },
