@@ -44,7 +44,6 @@ vim.keymap.set('n', '==', ':w <CR>', { noremap = true })
 vim.keymap.set('n', '<F5>', ':set nu! rnu! <CR>', { noremap = true })
 vim.keymap.set('n', '<F7>', ':setlocal spell! spelllang=en_au <CR>', { noremap = true })
 vim.keymap.set('n', '<F8>', ':set list! <CR>', { noremap = true })
-vim.keymap.set('n', '<F9>', ':redraw! <CR>', { noremap = true })
 -- latex figures
 vim.keymap.set('i', '<c-f>', [[<Esc>:silent exec '.!inkscape-figures create "'.getline('.').'" "figures"'<CR><CR>:w<CR>]], { noremap = true })
 vim.keymap.set('n', '<c-f>', [[:silent exec '!inkscape-figures edit "figures" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>]], { noremap = true })
