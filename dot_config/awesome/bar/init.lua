@@ -52,7 +52,7 @@ end
 -- @DOC_FOR_EACH_SCREEN@
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Each screen has its own tag table.
-    awful.tag({ "", "", "", "", "" }, s, awful.layout.layouts[1])
+    awful.tag({ "I", "II", "III", "IV", "V" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -70,8 +70,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     if ( pc == "laptop" ) then
         -- Define variables
-        tag_width = 18
-        wibar_height = 22
+        wibar_height = 24
+        tag_margin = 4
+        tag_width = wibar_height
 
         -- Define wibar right-side widgets
         wibar_right_widgets = wibox.widget {
@@ -87,8 +88,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
         }
     else
         -- Define variables
-        tag_width = 17
-        wibar_height = 21
+        wibar_height = 23
+        tag_margin = 3
+        tag_width = wibar_height
 
         -- Define wibar right-side widgets
         wibar_right_widgets = wibox.widget {
@@ -121,7 +123,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 id = "background_role",
                 widget = wibox.container.background,
             },
-            margins = 2,
+            margins = tag_margin,
             widget = wibox.container.margin,
         },
     }
