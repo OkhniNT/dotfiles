@@ -59,14 +59,28 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
-    s.mylayoutbox = wibox.container.margin (awful.widget.layoutbox {
+    -- s.mylayoutbox = wibox.container.margin (awful.widget.layoutbox {
+    --         screen  = s,
+    --         buttons = {
+    --             awful.button({ }, 1, function () awful.layout.inc( 1) end),
+    --             awful.button({ }, 3, function () awful.layout.inc(-1) end),
+    --             awful.button({ }, 4, function () awful.layout.inc(-1) end),
+    --             awful.button({ }, 5, function () awful.layout.inc( 1) end),
+    --         }}, 4, 4, 4, 4)
+
+    s.mylayoutbox = wibox.container.place {
+        widget = awful.widget.layoutbox {
             screen  = s,
             buttons = {
                 awful.button({ }, 1, function () awful.layout.inc( 1) end),
                 awful.button({ }, 3, function () awful.layout.inc(-1) end),
                 awful.button({ }, 4, function () awful.layout.inc(-1) end),
                 awful.button({ }, 5, function () awful.layout.inc( 1) end),
-            }}, 3, 3, 3, 3)
+            }},
+        forced_width = 14,
+        valign = "center",
+        halign = "center",
+        }
 
     if ( pc == "laptop" ) then
         -- Define variables
@@ -126,6 +140,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
             margins = tag_margin,
             widget = wibox.container.margin,
         },
+        -- update_callback = function () end,
     }
 
     -- @TASKLIST_BUTTON@
@@ -133,6 +148,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
     s.mytasklist = awful.widget.tasklist {
             screen  = s,
             filter  = awful.widget.tasklist.filter.currenttags,
+            style   = {
+                shape = function (cr, w, h) gears.shape.rounded_rect (cr, w, h, 5) end,
+            },
             buttons = {
                 awful.button({ }, 1, function (c)
                     c:activate { context = "tasklist", action = "toggle_minimization" }
@@ -140,6 +158,24 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
                 awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
                 awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
+            },
+            widget_template = {
+                {
+                    {
+                        {
+                            id = "text_role",
+                            valign = "center",
+                            halign = "center",
+                            widget = wibox.widget.textbox,
+                        },
+                        margins = 2,
+                        widget = wibox.container.margin,
+                    },
+                    id = "background_role",
+                    widget = wibox.container.background,
+                },
+                margins = tag_margin,
+                widget = wibox.container.margin,
             },
     }
 
