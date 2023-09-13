@@ -1,13 +1,13 @@
 -- Plugins --
 
 -- set leader
-vim.g.mapleader = ' '
+vim.g.mapleader = ','
 -- load lazy
 require('plugins')
 
 -- telescope config
 local telescope = require('telescope.builtin')
-vim.keymap.set('n', '<leader>tf', telescope.find_files, { noremap = true })
+vim.keymap.set('n', '<leader>tt', telescope.find_files, { noremap = true })
 vim.keymap.set('n', '<leader>tg', telescope.live_grep, { noremap = true })
 vim.keymap.set('n', '<leader>tb', telescope.buffers, { noremap = true })
 
@@ -58,7 +58,7 @@ vim.opt.ignorecase = true
 -- set list chars
 vim.opt.lcs = 'eol:$,trail:~,extends:>,precedes:<,space:·'
 -- set conceal level
-vim.opt.cole = 1
+vim.opt.cole = 2
 
 -- Bindings --
 
