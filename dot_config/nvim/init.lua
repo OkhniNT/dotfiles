@@ -14,17 +14,24 @@ vim.keymap.set('n', '<leader>tb', telescope.buffers, { noremap = true })
 -- coq config
 vim.g.coq_settings = { ['keymap.jump_to_mark'] = '<c-a>', ['keymap.recommended'] = false }
 
-vim.keymap.set('i', '<cr>', [[pumvisible() ? (complete_info().selected == -1 ? "\<C-e><CR>" : "\<C-y>") : "\<CR>"]], { expr = true, noremap = true })
-vim.keymap.set('i', '<bs>', [[pumvisible() ? "\<C-e><BS>"  : "\<BS>"]], { expr = true, noremap = true })
-vim.keymap.set('i', '<tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true, noremap = true })
+vim.keymap.set('i', '<cr>', [[pumvisible() ? (complete_info().selected == -1 ? "\<c-e><cr>" : "\<c-y>") : "\<cr>"]], { expr = true, noremap = true })
+vim.keymap.set('i', '<tab>', [[pumvisible() ? "\<c-n>" : "\<tab>"]], { expr = true, noremap = true })
+vim.keymap.set('i', '<esc>', [[pumvisible() ? "\<c-e><esc>" : "\<esc>"]], { expr = true, noremap = true })
 
-vim.keymap.set('n', '<leader>cx', ':COQnow -s <CR>', { noremap = true })
-vim.keymap.set('n', '<leader>cse', ':COQsnips edit <CR><CR>', { noremap = true })
-vim.keymap.set('n', '<leader>csc', ':COQsnips compile <CR>', { noremap = true })
+vim.keymap.set('n', '<leader>cx', ':COQnow -s <cr>', { noremap = true })
+vim.keymap.set('n', '<leader>cse', ':COQsnips edit <cr><cr>', { noremap = true })
+vim.keymap.set('n', '<leader>csc', ':COQsnips compile <cr>', { noremap = true })
 
 -- treesitter config
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+-- lexima config
+vim.fn['lexima#add_rule']({ char = '$', input_after = '$', filetype = 'tex' })
+vim.fn['lexima#add_rule']({ char = ']', at = [[\%#\$]], leave = 1, filetype = 'tex' })
+vim.fn['lexima#add_rule']({ char = '<space>', at = [[\%#\$]], input = '<space>', input_after = '<space>', filetype = 'tex' })
+vim.fn['lexima#add_rule']({ char = '<bs>', at = [[\$\%#\$]], delete = 1, filetype = 'tex' })
+vim.fn['lexima#add_rule']({ char = '<bs>', at = [[\$\s\%#\s\$]], delete = 1, filetype = 'tex' })
 
 -- Editor Configuation --
 
@@ -56,23 +63,23 @@ vim.opt.cole = 1
 -- Bindings --
 
 -- save
-vim.keymap.set('n', '==', ':w <CR>', { noremap = true })
+vim.keymap.set('n', '==', ':w <cr>', { noremap = true })
 -- terminal commands
 vim.keymap.set('t', '<esc>', [[<c-\><c-n>]])
 vim.keymap.set('t', '<c-w>', [[<c-\><c-n><c-w>]])
 -- function keys
-vim.keymap.set('n', '<F5>', ':set nu! rnu! <CR>', { noremap = true })
-vim.keymap.set('n', '<F7>', ':setlocal spell! spelllang=en_au <CR>', { noremap = true })
-vim.keymap.set('n', '<F8>', ':set list! <CR>', { noremap = true })
+vim.keymap.set('n', '<F5>', ':set nu! rnu! <cr>', { noremap = true })
+vim.keymap.set('n', '<F7>', ':setlocal spell! spelllang=en_au <cr>', { noremap = true })
+vim.keymap.set('n', '<F8>', ':set list! <cr>', { noremap = true })
 
 -- latex figures
-vim.keymap.set('i', '<c-f>', [[<Esc>:silent exec '.!inkscape-figures create "'.getline('.').'" "figures"'<CR><CR>:w<CR>]], { noremap = true })
-vim.keymap.set('n', '<c-f>', [[:silent exec '!inkscape-figures edit "figures" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>]], { noremap = true })
-vim.keymap.set('n', '<leader>f', [[:silent exec '.!$HOME/.config/nvim/scripts/latex_diagrams'<CR><CR>:w<CR><CR>f[]], { noremap = true })
+vim.keymap.set('i', '<c-f>', [[<esc>:silent exec '.!inkscape-figures create "'.getline('.').'" "figures"'<cr><cr>:w<cr>]], { noremap = true })
+vim.keymap.set('n', '<c-f>', [[:silent exec '!inkscape-figures edit "figures" > /dev/null 2>&1 &'<cr><cr>:redraw!<cr>]], { noremap = true })
+vim.keymap.set('n', '<leader>f', [[:silent exec '.!$HOME/.config/nvim/scripts/latex_diagrams'<cr><cr>:w<cr><cr>f[]], { noremap = true })
 
 -- vimdiff
-vim.keymap.set('n', '<leader>dp', ':diffput <CR>', { noremap = true })
-vim.keymap.set('n', '<leader>dg', ':diffget <CR>', { noremap = true })
+vim.keymap.set('n', '<leader>dp', ':diffput <cr>', { noremap = true })
+vim.keymap.set('n', '<leader>dg', ':diffget <cr>', { noremap = true })
 
 -- Commands --
 
@@ -89,5 +96,5 @@ vim.api.nvim_create_autocmd({ 'BufReadPost', 'FileReadPost' }, {
 })
 -- vim.api.nvim_create_autocmd({ 'BufReadPre', 'BufNewFile' }, {
 --     pattern = '*.tex',
---     callback = function () vim.keymap.set('n', '==', ':w <CR>:silent !pdflatex "%"; rm *.log *.aux <CR>:silent redraw! <CR>') end,
+--     callback = function () vim.keymap.set('n', '==', ':w <cr>:silent !pdflatex "%"; rm *.log *.aux <cr>:silent redraw! <cr>') end,
 -- })
