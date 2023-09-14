@@ -195,10 +195,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                     s.mypromptbox,
                     layout = wibox.layout.fixed.horizontal,
                 },
-                { -- Middle widget
-                    s.mytasklist,
-                    layout = wibox.layout.fixed.horizontal,
-                },
+                s.mytasklist, -- Middle widget
                 wibar_right_widgets,
                 expand = "none",
                 layout = wibox.layout.align.horizontal,
@@ -218,10 +215,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                     s.mypromptbox,
                     layout = wibox.layout.fixed.horizontal,
                 },
-                { -- Middle widget
-                    s.mytasklist,
-                    layout = wibox.layout.fixed.horizontal,
-                },
+                s.mytasklist, -- Middle widget
                 wibar_right_widgets,
                 expand = "none",
                 layout = wibox.layout.align.horizontal,
