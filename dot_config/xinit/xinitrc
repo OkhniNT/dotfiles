@@ -1,5 +1,5 @@
 if [ $PC == laptop ]; then
-    picom -b --config ~/.config/picom/picom-laptop.conf
+    # picom -b --config ~/.config/picom/picom-laptop.conf
 else
     nvidia-settings -l --config="$HOME/.config/NVIDIA/settings"
 fi
