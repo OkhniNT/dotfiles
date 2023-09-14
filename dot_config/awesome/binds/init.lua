@@ -70,6 +70,7 @@ awful.keyboard.append_global_keybindings({
     end, {description = "lua execute prompt", group = "awesome"}),
 
     awful.key({ modkey }, "Return", function () awful.spawn(terminal) end, {description = "open a terminal", group = "launcher"}),
+    awful.key({ modkey, "Shift" }, "Return", function () awful.spawn(terminal .. " -c popterm") end, {description = "open a floating terminal", group = "launcher"}),
     awful.key({ modkey }, "r", function () awful.spawn(terminal .. " -e vifmrun") end, {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey }, "d", function () awful.spawn("rofi -show run") end, {description = "run rofi", group = "launcher"}),
     awful.key({ modkey }, "F2", function () awful.spawn("org.mozilla.firefox") end, {description = "open firefox", group = "launcher"}),
