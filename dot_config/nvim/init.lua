@@ -55,6 +55,8 @@ vim.opt.softtabstop = 4
 
 -- set search
 vim.opt.ignorecase = true
+-- set linebreak at words
+vim.opt.linebreak = true
 -- set list chars
 vim.opt.lcs = 'eol:$,trail:~,extends:>,precedes:<,space:·'
 -- set conceal level
