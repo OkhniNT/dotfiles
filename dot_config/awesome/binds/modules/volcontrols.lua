@@ -31,7 +31,7 @@ function M.mute (notif)
     awful.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
 
     awful.spawn.easy_async("wpctl get-volume @DEFAULT_AUDIO_SINK@", function(stdout)
-        if stdout == "^.*[MUTED]$" then
+        if stdout:match(".*[MUTED].*") then
             local icon = ""
             notify(notif, icon)
         else
