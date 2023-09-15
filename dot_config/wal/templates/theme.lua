@@ -26,7 +26,7 @@ theme.fg_focus = "{background}"
 theme.fg_urgent = "{foreground}"
 theme.fg_minimize = "{foreground}"
 
-theme.useless_gap = dpi(4)
+theme.useless_gap = dpi(8)
 theme.border_width = dpi(2)
 theme.border_color_normal = "{background}"
 theme.border_color_active = "{color3}"
