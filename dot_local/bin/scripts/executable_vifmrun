@@ -4,7 +4,7 @@ if [ -z "$(command -v vifm)" ]; then
 	printf "vifm isn't installed on your system!\n"
 	exit 1
 elif [ -z "$(command -v ueberzug)" ]; then
-	exec vifm "$HOME"
+	exec vifm "./"
 else
 	cleanup() {
 		exec 3>&-
@@ -16,6 +16,6 @@ else
 	ueberzug layer -s <"$FIFO_UEBERZUG" -p json &
 	exec 3>"$FIFO_UEBERZUG"
 	trap cleanup EXIT
-	vifm "$HOME" 3>&-
+	vifm "./" 3>&-
 	vifmimg clear
 fi
