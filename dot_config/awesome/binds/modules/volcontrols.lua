@@ -5,7 +5,7 @@ local M = {}
 
 local increment = 5
 
-local function notify (notif, icon)
+local function notify (icon)
     naughty.destroy_all_notifications()
     awful.spawn.easy_async("wpctl get-volume @DEFAULT_AUDIO_SINK@", function(stdout)
         naughty.notification {
@@ -15,28 +15,28 @@ local function notify (notif, icon)
     end)
 end
 
-function M.up (notif)
+function M.up ()
     awful.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ " .. increment .. "%+")
     local icon = ""
-    notify(notif, icon)
+    notify(icon)
 end
 
-function M.down (notif)
+function M.down ()
     awful.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ " .. increment .. "%-")
     local icon = ""
-    notify(notif, icon)
+    notify(icon)
 end
 
-function M.mute (notif)
+function M.mute ()
     awful.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
 
     awful.spawn.easy_async("wpctl get-volume @DEFAULT_AUDIO_SINK@", function(stdout)
         if stdout:match(".*[MUTED].*") then
             local icon = ""
-            notify(notif, icon)
+            notify(icon)
         else
             local icon = ""
-            notify(notif, icon)
+            notify(icon)
         end
     end)
 end
