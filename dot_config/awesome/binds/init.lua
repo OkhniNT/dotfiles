@@ -79,9 +79,9 @@ awful.keyboard.append_global_keybindings({
 
 -- Media keys
 awful.keyboard.append_global_keybindings({
-    awful.key({ }, "XF86AudioLowerVolume", function () vol.down(volnotif) end),
-    awful.key({ }, "XF86AudioRaiseVolume", function () vol.up(volnotif) end),
-    awful.key({ }, "XF86AudioMute", function () vol.mute(volnotif) end),
+    awful.key({ }, "XF86AudioLowerVolume", function () vol.down() end),
+    awful.key({ }, "XF86AudioRaiseVolume", function () vol.up() end),
+    awful.key({ }, "XF86AudioMute", function () vol.mute() end),
     awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl play-pause") end),
     awful.key({ }, "XF86AudioNext", function () awful.util.spawn("playerctl next") end),
     awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("playerctl previous") end),
