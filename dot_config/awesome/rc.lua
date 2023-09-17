@@ -40,7 +40,7 @@ gears.timer {
 
 -- {{{ Variable definitions
 -- @DOC_LOAD_THEME@
-beautiful.init(gears.filesystem.get_xdg_cache_home() .. "wal/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- {{{ Notifications
 
