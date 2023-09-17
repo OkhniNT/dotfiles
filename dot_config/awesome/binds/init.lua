@@ -1,5 +1,4 @@
 local awful = require("awful")
-local hotkeys_popup = require("awful.hotkeys_popup")
 local vol = require("binds.modules.volcontrols")
 local bright = require("binds.modules.brightcontrols")
 
@@ -16,7 +15,6 @@ modkey = "Mod4"
 -- @DOC_MENU@
 -- Create a launcher widget and a main menu
 myawesomemenu = {
-   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
@@ -56,7 +54,6 @@ end)
 
 -- General Awesome keys
 awful.keyboard.append_global_keybindings({
-    awful.key({ modkey }, "F1", hotkeys_popup.show_help, {description="show help", group="awesome"}),
     awful.key({ modkey, "Shift" }, "q", awesome.quit, {description = "quit awesome", group = "awesome"}),
     awful.key({ modkey }, "w", function () mymainmenu:show() end, {description = "show main menu", group = "awesome"}),
     awful.key({ modkey }, "F12", awesome.restart, {description = "reload awesome", group = "awesome"}),
