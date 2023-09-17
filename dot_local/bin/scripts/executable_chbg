@@ -3,17 +3,17 @@
 case $1 in
     -l)
         file="$2"
-        xresources="$HOME/.cache/wal/xresources-light"
+        xresources="$HOME/.config/xinit/xresources-kanagawa-lotus"
         light="-l"
         ;;
     *)
         file="$1"
-        xresources="$HOME/.cache/wal/xresources-dark"
+        xresources="$HOME/.config/xinit/xresources-kanagawa-dragon"
         light=""
         ;;
 esac
 
-wal -c; wal -e -s -t $light -i "$file"
+# wal -c; wal -e -s -t $light -i "$file"
 feh --bg-fill "$file"
 rm ~/.fehbg
 cp $file ~/.config/back.png
