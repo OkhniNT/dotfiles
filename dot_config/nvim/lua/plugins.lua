@@ -46,7 +46,7 @@ plugins = {
     { 'ms-jpq/coq-nvim', branch = 'coq', config = function ()
         vim.g.coq_settings = { ['keymap.jump_to_mark'] = '<c-a>', ['keymap.recommended'] = false }
 
-        vim.keymap.set('i', '<cr>', [[pumvisible() ? (complete_info().selected == -1 ? '<c-e><cr>' : '<c-y>') : '<cr>']], { expr = true, noremap = true })
+        vim.keymap.set('i', '<cr>', [[pumvisible() ? (complete_info().selected == -1 ? '\<c-e><cr>' : '\<c-y>') : '<cr>']], { expr = true, noremap = true })
         vim.keymap.set('i', '<tab>', [[pumvisible() ? '<c-n>' : '<tab>']], { expr = true, noremap = true })
         vim.keymap.set('i', '<esc>', [[pumvisible() ? '<c-e><esc>' : '<esc>']], { expr = true, noremap = true })
 
