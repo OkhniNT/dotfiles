@@ -18,7 +18,7 @@ plugins = {
             transparent = true,
             colors = { theme = { all = { ui = { bg_gutter = 'none' } } } },
         })
-        vim.cmd.colorscheme('kanagawa')
+        vim.cmd.colorscheme('kanagawa-dragon')
     end },
 
     { 'nvim-treesitter/nvim-treesitter' , build = ':TSUpdate', config = function ()
