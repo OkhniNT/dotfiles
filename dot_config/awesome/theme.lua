@@ -19,7 +19,7 @@ theme.font = "Monospace Bold 9"
 
 -- General colours
 theme.bg_normal = xrdb.background
-theme.bg_focus = xrdb.color3
+theme.bg_focus = xrdb.color4
 theme.bg_urgent = xrdb.color1
 theme.bg_minimize = xrdb.background
 theme.bg_systray = theme.bg_normal
@@ -32,7 +32,7 @@ theme.fg_minimize = xrdb.foreground
 theme.useless_gap = dpi(8)
 theme.border_width = dpi(2)
 theme.border_color_normal = xrdb.background
-theme.border_color_active = xrdb.color3
+theme.border_color_active = xrdb.color4
 theme.border_color_marked = xrdb.color1
 
 -- Notification theming
