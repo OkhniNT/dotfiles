@@ -127,11 +127,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
             shape_empty = function (cr, w, h) gears.shape.squircle (cr, w, h, 3) end,
         },
         buttons = taglist_buttons,
-        widget_template = {{{
-                    id = "text_role",
+        widget_template = {{{{
+                        id = "text_role",
+                        widget = wibox.widget.textbox,
+                    },
                     valign = "center",
                     halign = "center",
-                    widget = wibox.widget.textbox,
+                    widget = wibox.container.place,
                 },
                 forced_width = tag_width,
                 id = "background_role",
@@ -159,16 +161,17 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
                 awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
             },
-            widget_template = {
-                {
-                    {
-                        {
-                            id = "text_role",
+            widget_template = {{{{{
+                                id = "text_role",
+                                widget = wibox.widget.textbox,
+                            },
                             valign = "center",
                             halign = "center",
-                            widget = wibox.widget.textbox,
+                            forced_height = wibar_height - tag_margin * 2,
+                            widget = wibox.container.place,
                         },
-                        margins = 2,
+                        left = tag_margin,
+                        right = tag_margin,
                         widget = wibox.container.margin,
                     },
                     id = "background_role",
