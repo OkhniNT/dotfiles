@@ -5,7 +5,7 @@ local gears = require("gears")
 
 local pc = os.getenv("PC")
 
-beautiful.init(gears.filesystem.get_xdg_cache_home() .. "wal/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- Tag layout
 tag.connect_signal("request::default_layouts", function()
