@@ -101,7 +101,17 @@ plugins = {
     end },
 
     { 'akinsho/toggleterm.nvim', config = function () 
-        
+        require('toggleterm').setup()
+        vim.keymap.set('n', '<leader>s', ':ToggleTerm direction=float <cr>')
+    end },
+
+    { 'jinh0/eyeliner.nvim', config = function ()
+        require('eyeliner').setup({
+            highlight_on_key = true,
+            dim = true,
+        })
+        vim.api.nvim_set_hl(0, 'EyelinerPrimary', { bold = true, underline = true })
+        vim.api.nvim_set_hl(0, 'EyelinerSecondary', { underline = true })
     end },
 }
 
