@@ -4,7 +4,7 @@ return {
         cmp.setup({
             snippet = {
                 expand = function (args)
-                    require('luasnip').lsp_expand(args.body)
+                    require('snippy').expand_snippet(args.body)
                 end
             },
             view = {
@@ -18,29 +18,20 @@ return {
                 [ '<cr>' ] = cmp.mapping.confirm({ select = false }),
             }),
             sources = cmp.config.sources({
-                { name = 'luasnip' },
+                { name = 'snippy' },
                 { name = 'buffer' },
             }),
         })
     end },
-
-    { 'l3mon4d3/luasnip', build = 'make install_jsregexp', config = function ()
-        ls = require('luasnip')
-        ls.setup({
-            ext_prio_increase = 1,
-            enable_autosnippets = true,
-        })
-        require('luasnip.loaders.from_lua').load({ paths = '~/.config/nvim/snippets'})
-
-        vim.keymap.set('i', '<c-a>', function ()
-            if ls.choice_active() then
-                ls.change_choice(1)
-            else
-                ls.jump(1)
-            end
-        end )
-    end },
-
     { 'hrsh7th/cmp-buffer' },
-    { 'saadparwaiz1/cmp_luasnip' },
+
+    { 'dcampos/nvim-snippy', opts = {
+        choice_delay = 500,
+        mappings = {
+            is = {
+                ['<tab>'] = 'next',
+            },
+        },
+    }},
+    { 'dcampos/cmp-snippy' },
 }
