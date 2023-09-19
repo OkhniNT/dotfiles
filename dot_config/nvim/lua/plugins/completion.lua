@@ -22,6 +22,8 @@ return {
                 { name = 'buffer' },
             }),
         })
+        vim.keymap.set('n', '<leader>cd', function () cmp.setup.buffer({ enabled = false }) end )
+        vim.keymap.set('n', '<leader>ce', function () cmp.setup.buffer({ enabled = true }) end )
     end },
     { 'hrsh7th/cmp-buffer' },
 
