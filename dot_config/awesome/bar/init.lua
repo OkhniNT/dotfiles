@@ -9,16 +9,7 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- Tag layout
 tag.connect_signal("request::default_layouts", function()
-    awful.layout.append_default_layouts({
-        awful.layout.suit.tile,
-        awful.layout.suit.tile.left,
-        awful.layout.suit.tile.bottom,
-        awful.layout.suit.tile.top,
-        awful.layout.suit.spiral.dwindle,
-        awful.layout.suit.floating,
-        awful.layout.suit.max,
-        awful.layout.suit.max.fullscreen,
-    })
+    awful.layout.append_default_layouts({ awful.layout.suit.tile })
 end)
 
 -- Create a padding widget
@@ -57,31 +48,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
 
-    -- Create an imagebox widget which will contain an icon indicating which layout we're using.
-    -- We need one layoutbox per screen.
-    -- s.mylayoutbox = wibox.container.margin (awful.widget.layoutbox {
-    --         screen  = s,
-    --         buttons = {
-    --             awful.button({ }, 1, function () awful.layout.inc( 1) end),
-    --             awful.button({ }, 3, function () awful.layout.inc(-1) end),
-    --             awful.button({ }, 4, function () awful.layout.inc(-1) end),
-    --             awful.button({ }, 5, function () awful.layout.inc( 1) end),
-    --         }}, 4, 4, 4, 4)
-
-    s.mylayoutbox = wibox.container.place {
-        widget = awful.widget.layoutbox {
-            screen  = s,
-            buttons = {
-                awful.button({ }, 1, function () awful.layout.inc( 1) end),
-                awful.button({ }, 3, function () awful.layout.inc(-1) end),
-                awful.button({ }, 4, function () awful.layout.inc(-1) end),
-                awful.button({ }, 5, function () awful.layout.inc( 1) end),
-            }},
-        forced_width = 14,
-        valign = "center",
-        halign = "center",
-        }
-
     if ( pc == "laptop" ) then
         -- Define variables
         wibar_height = 24
@@ -96,8 +62,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
             mypadding,
             mytextclock,
             mypadding,
-            s.mylayoutbox,
-            mypadding,
             layout = wibox.layout.fixed.horizontal,
         }
     else
@@ -111,8 +75,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
             wibox.widget.systray(),
             mypadding,
             mytextclock,
-            mypadding,
-            s.mylayoutbox,
             mypadding,
             layout = wibox.layout.fixed.horizontal,
         }
