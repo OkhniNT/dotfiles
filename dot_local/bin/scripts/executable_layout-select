@@ -1,0 +1,7 @@
+#!/bin/sh
+
+layout=$(echo -n -e "tile\ntile.top\nfair\nspiral.dwindle\ncorner.nw" | rofi -dmenu)
+lua='awful = require("awful") awful.layout.set(awful.layout.suit.'$layout', awful.screen.focused().selected_tag)'
+
+awesome-client "$lua"
+notify-send "Layout Changed" "$layout"
