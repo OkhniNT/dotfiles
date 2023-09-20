@@ -50,15 +50,16 @@ inputbar {
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "";
-    padding:                     10px 13px;
+    font:                        "monospace 15";
+    str:                         "";
+    padding:                     10px 18px 10px 15px;
     border-radius:               5px;
     background-color:            @urgent-background;
     text-color:                  @background;
 }
 prompt {
     enabled:                     true;
-    padding:                     10px;
+    padding:                     12px 10px 10px 10px;
     border-radius:               5px;
     background-color:            @active-background;
     text-color:                  @background;
@@ -93,7 +94,7 @@ textbox {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     2;
+    columns:                     3;
     lines:                       5;
     cycle:                       true;
     scrollbar:                   false;
