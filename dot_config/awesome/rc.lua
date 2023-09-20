@@ -69,3 +69,8 @@ end)
 client.connect_signal("mouse::enter", function(c)
     c:activate { context = "mouse_enter", raise = false }
 end)
+
+-- Spawn windows as slaves
+client.connect_signal("manage", function(c)
+    if not awesome.startup then awful.client.setslave(c) end
+end)
