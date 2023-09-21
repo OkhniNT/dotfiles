@@ -2,6 +2,7 @@ return {
     { 'neovim/nvim-lspconfig', config = function ()
         local lspconfig = require('lspconfig')
         lspconfig.clangd.setup {}
+        lspconfig.pylsp.setup {}
     end },
     { 'hrsh7th/cmp-nvim-lsp' },
 
@@ -39,6 +40,9 @@ return {
 
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
         require('lspconfig')['clangd'].setup {
+            capabilities = capabilities
+        }
+        require('lspconfig')['pylsp'].setup {
             capabilities = capabilities
         }
 
