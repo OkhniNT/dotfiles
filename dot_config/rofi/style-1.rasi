@@ -4,7 +4,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "~/.cache/wal/colors-rofi-dark.rasi"
+@import                          "~/.config/rofi/kanagawa-lotus"
 
 /*****----- Main Window -----*****/
 window {
@@ -28,8 +28,7 @@ window {
 mainbox {
     enabled:                     true;
     spacing:                     15px;
-    margin:                      0px;
-    padding:                     30px;
+    margin:                      30px;
     background-color:            transparent;
     children:                    [ "inputbar", "message", "listview" ];
 }
@@ -44,25 +43,15 @@ inputbar {
     border-color:                @selected-active-background;
     background-color:            transparent;
     text-color:                  @foreground;
-    children:                    [ "textbox-prompt-colon", "prompt", "entry" ];
+    children:                    [ "prompt", "entry" ];
 }
 
-textbox-prompt-colon {
-    enabled:                     true;
-    expand:                      false;
-    font:                        "monospace 15";
-    str:                         "";
-    padding:                     10px 18px 10px 15px;
-    border-radius:               5px;
-    background-color:            @urgent-background;
-    text-color:                  @background;
-}
 prompt {
     enabled:                     true;
-    padding:                     12px 10px 10px 10px;
+    padding:                     10px 10px 10px 10px;
     border-radius:               5px;
-    background-color:            @active-background;
-    text-color:                  @background;
+    background-color:            @alternate-normal-background;
+    text-color:                  @foreground;
 }
 
 entry {
@@ -95,7 +84,7 @@ textbox {
 listview {
     enabled:                     true;
     columns:                     3;
-    lines:                       5;
+    lines:                       4;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
@@ -127,8 +116,8 @@ element-text {
 
 element normal.normal,
 element alternate.normal {
-    background-color:            var(alternate-normal-background);
-    text-color:                  var(foreground);
+    background-color:            var(selected-normal-background);
+    text-color:                  var(selected-normal-foreground);
 }
 element normal.urgent,
 element alternate.urgent,
