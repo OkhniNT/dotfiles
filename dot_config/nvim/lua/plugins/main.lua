@@ -46,7 +46,7 @@ return {
     { 'folke/zen-mode.nvim', config = function ()
         require('zen-mode').setup({
             window = {
-                width = 90,
+                width = 80,
                 options = {
                     number = false,
                     relativenumber = false,
