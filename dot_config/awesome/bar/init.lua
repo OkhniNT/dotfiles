@@ -66,7 +66,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         }
     else
         -- Define variables
-        wibar_height = 24
+        wibar_height = 25
         tag_margin = 3
         tag_width = wibar_height
 
@@ -89,13 +89,11 @@ screen.connect_signal("request::desktop_decoration", function(s)
             shape_empty = function (cr, w, h) gears.shape.squircle (cr, w, h, 3) end,
         },
         buttons = taglist_buttons,
-        widget_template = {{{{
-                        id = "text_role",
-                        widget = wibox.widget.textbox,
-                    },
+        widget_template = {{{
+                    id = "text_role",
                     valign = "center",
                     halign = "center",
-                    widget = wibox.container.place,
+                    widget = wibox.widget.textbox,
                 },
                 forced_width = tag_width,
                 id = "background_role",
