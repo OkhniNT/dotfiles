@@ -5,6 +5,6 @@ else
     nvidia-settings -l --config="$HOME/.config/NVIDIA/settings"
 fi
 
-chbg $HOME/.config/back.png &
+chbg -l $HOME/.config/back.png &
 
 exec awesome --no-argb
