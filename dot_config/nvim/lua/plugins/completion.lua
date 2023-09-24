@@ -27,6 +27,7 @@ return {
                 [ '<c-space>' ] = cmp.mapping.complete(),
                 [ '<c-e>' ] = cmp.mapping.abort(),
                 [ '<tab>' ] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+                [ '<c-a>' ] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
                 [ '<s-tab>' ] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
                 [ '<cr>' ] = cmp.mapping.confirm({ select = false }),
             }),
