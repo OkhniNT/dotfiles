@@ -50,9 +50,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     if ( pc == "laptop" ) then
         -- Define variables
-        wibar_height = 24
+        wibar_height = 25
         tag_margin = 3
-        tag_width = wibar_height
+        tag_width = wibar_height + 1
 
         -- Define wibar right-side widgets
         wibar_right_widgets = wibox.widget {
@@ -68,7 +68,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         -- Define variables
         wibar_height = 25
         tag_margin = 3
-        tag_width = wibar_height
+        tag_width = wibar_height + 1
 
         -- Define wibar right-side widgets
         wibar_right_widgets = wibox.widget {
