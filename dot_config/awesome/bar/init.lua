@@ -35,11 +35,6 @@ mypadding = wibox.widget {
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
-if ( pc == "laptop" ) then
-    -- Create a battery widget
-    mybattery = awful.widget.watch('sh -c "~/.config/awesome/bar/scripts/batcheck"', 60)
-end
-
 -- @DOC_FOR_EACH_SCREEN@
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Each screen has its own tag table.
@@ -50,9 +45,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     if ( pc == "laptop" ) then
         -- Define variables
-        wibar_height = 25
+        wibar_height = 23
         tag_margin = 3
         tag_width = wibar_height + 1
+
+        -- Create a battery widget
+        mybattery = awful.widget.watch([[sh -c "~/.config/awesome/bar/scripts/batcheck"]], 60)
 
         -- Define wibar right-side widgets
         wibar_right_widgets = wibox.widget {
