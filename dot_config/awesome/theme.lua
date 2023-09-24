@@ -15,7 +15,7 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 
-theme.font = "Monospace Bold 9"
+theme.font = "Monospace Bold 8"
 
 -- General colours
 theme.bg_normal = xrdb.background
