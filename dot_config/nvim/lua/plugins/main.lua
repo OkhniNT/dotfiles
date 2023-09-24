@@ -1,11 +1,10 @@
 return {
     { 'rebelot/kanagawa.nvim', config = function ()
         require('kanagawa').setup({
-            theme = 'dragon',
             transparent = true,
             colors = { theme = { all = { ui = { bg_gutter = 'none' } } } },
         })
-        vim.cmd.colorscheme('kanagawa-dragon')
+        vim.cmd.colorscheme('kanagawa')
     end },
 
     { 'nvim-treesitter/nvim-treesitter' , build = ':TSUpdate', config = function ()
