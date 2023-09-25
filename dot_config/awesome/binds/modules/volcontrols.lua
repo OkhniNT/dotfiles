@@ -10,7 +10,7 @@ local function notify (icon)
     awful.spawn.easy_async("wpctl get-volume @DEFAULT_AUDIO_SINK@", function(stdout)
         naughty.notification {
             title = icon,
-            message = string.sub(stdout, 8),
+            message = stdout,
         }
     end)
 end
