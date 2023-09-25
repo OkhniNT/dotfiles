@@ -124,6 +124,7 @@ mark d ~/documents
 mark D ~/downloads
 mark g ~/git
 mark y ~/documents/obsidian/University
+mark S ~/documents/sync/
 mark b ~/media/pictures/backgrounds
 mark m /mnt
 mark M /run/media
