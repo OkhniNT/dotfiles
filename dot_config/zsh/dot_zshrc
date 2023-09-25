@@ -30,7 +30,8 @@ alias vf='vifmrun'
 alias vifm='vifmrun'
 alias view='nvim -R -'
 
-alias cdf='cd "$(find * -type d | fzf --reverse)"'
+alias cdf='cd "$(find * -maxdepth 8 -type d | fzf --reverse)"'
+alias cdh='cd "$(find .* -maxdepth 8 -type d | fzf --reverse)"'
 alias conf='cd "$(find ~/.config* | fzf --reverse)"'
 
 alias doctopdf='libreoffice --headless --convert-to pdf'
