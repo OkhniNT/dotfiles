@@ -40,7 +40,7 @@ vim.opt.linebreak = true
 -- set list chars
 vim.opt.lcs = 'eol:$,trail:~,extends:>,precedes:<,space:·'
 -- set conceal level
-vim.opt.cole = 2
+vim.opt.cole = 0
 
 -- Bindings --
 
