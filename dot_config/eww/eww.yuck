@@ -11,29 +11,12 @@
     :wm-ignore false
     (box :space-evenly true
         (container :align "start" (sep) (textbox :text datetime) (sep))
-        (container :align "center" (textbox :text workspaces))
-        (container :align "end" (sep) (textbox :text datetime) (sep))
-    ))
-
-(defwindow bar2
-    :monitor 1
-    :geometry (geometry :x "0%"
-        :y "0%"
-        :width "100%"
-        :height "27px"
-        :anchor "bottom center")
-    :stacking "bg"
-    :reserve (struts :distance "27px" :side "bottom")
-    :windowtype "dock"
-    :wm-ignore false
-    (box :space-evenly true
-        (container :align "start" (sep) (textbox :text datetime) (sep))
-        (container :align "center" (textbox :text workspaces))
+        (container :align "center" (workspaces))
         (container :align "end" (sep) (textbox :text datetime) (sep))
     ))
 
 (defwidget textbox [?text]
-    (box :class "textbox"
+    (box :class "textbox" :valign "center" :vexpand true
         text
     ))
 
@@ -50,5 +33,9 @@
 (defpoll datetime :interval "5s"
     `date "+%F %R"`)
 
-(deflisten workspaces
+(deflisten getworkspaces
     `$HOME/.config/eww/scripts/workspaces-herbstluftwm.sh`)
+
+(defwidget workspaces[]
+    (literal :valign "center" :content getworkspaces)
+    )

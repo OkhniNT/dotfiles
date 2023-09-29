@@ -1,0 +1,53 @@
+@import "../colors/colors.scss";
+
+.bar {
+    background-color: $background;
+    color: $foreground;
+
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 12;
+}
+
+.sep {
+    font-size: 18;
+
+    padding: 1 5 1;
+}
+
+.textbox {
+    background-color: $color4;
+    color: $background;
+
+    padding: 3 8;
+
+    border-radius: 2;
+}
+
+.workspaces {
+    background-color: $background;
+    color: $background;
+
+    padding: 2;
+
+    border-radius: 2;
+}
+
+.tag_active, .tag_focused, .tag_occupied {
+    padding: 3 7;
+    margin: 0 2;
+
+    border-radius: 4;
+}
+
+.tag_active {
+    background-color: $color2;
+}
+
+.tag_focused {
+    background-color: $color1;
+}
+
+.tag_occupied {
+    background-color: $foreground;
+}
