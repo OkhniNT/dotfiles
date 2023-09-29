@@ -7,4 +7,5 @@ fi
 
 chbg -l $HOME/.config/back.png &
 
-exec awesome --no-argb
+# exec awesome --no-argb
+exec herbstluftwm
