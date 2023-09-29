@@ -3,7 +3,10 @@ if [ $PC == laptop ]; then
     echo
 else
     nvidia-settings -l --config="$HOME/.config/NVIDIA/settings"
+    eww open bar
 fi
+
+dunst &
 
 chbg -l $HOME/.config/back.png &
 
