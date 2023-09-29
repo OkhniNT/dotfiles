@@ -6,8 +6,9 @@
 
 pacman -S base base-devel linux linux-firmware linux-headers archlinux-keyring \
 grub vim networkmanager git chezmoi man-db man-pages texinfo clang ntp cpupower \
-xclip vifm p7zip unzip unrar dosfstools exfatprogs ntfs-3g xorg-server \
-xorg-xinit xorg-xinput xorg-xprop xorg-xset xorg-xsetroot xorg-xrdb xorg-xev
+xclip vifm p7zip unzip unrar dosfstools exfatprogs ntfs-3g herbstluftwm \
+xorg-server xorg-xinit xorg-xinput xorg-xprop xorg-xset xorg-xsetroot xorg-xrdb \
+xorg-xev
 
 ### Secondary
 
@@ -34,15 +35,15 @@ flatpak install -u firefox spotify steam discord
 ## AUR
 
 git clone https://aur.archlinux.org/paru.git; cd paru; makepkg -si
-paru -S awesome-git pandoc-bin mullvad-vpn
+paru -S pandoc-bin mullvad-vpn
 
 
 ## System Specific
 
 ### Laptop
 
-pacman -S intel-ucode light powertop tlp xf86-video-intel libva-intel-driver mesa vulkan-intel \
-bluez bluez-utils bc
+pacman -S intel-ucode light powertop tlp xf86-video-intel libva-intel-driver \
+mesa vulkan-intel bluez bluez-utils bc
 
 ### Desktop
 
