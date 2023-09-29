@@ -9,7 +9,7 @@ return {
 
     { 'nvim-treesitter/nvim-treesitter' , build = ':TSUpdate', config = function ()
         require('nvim-treesitter.configs').setup({
-            ensure_installed = { 'c', 'python', 'lua', 'markdown', 'markdown_inline', 'diff', 'latex' },
+            ensure_installed = { 'c', 'python', 'lua', 'markdown', 'markdown_inline', 'diff', 'latex', 'yuck' },
             highlight = {
                 enable = true,
                 disable = { 'latex' },
