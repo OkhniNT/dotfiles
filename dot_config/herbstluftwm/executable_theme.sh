@@ -39,11 +39,12 @@ hc attr theme.title_font 'monospace:pixelsize=9'
 hc attr theme.title_depth 3  # space below the title's baseline
 
 hc attr theme.active.color "$color4"
-hc attr theme.title_color "$foreground"
+hc attr theme.title_color "$background"
 hc attr theme.normal.color "$color8"
 hc attr theme.urgent.color "$color1"
-hc attr theme.tab_color "$background"
+hc attr theme.tab_color "$color8"
 hc attr theme.active.tab_color "$color8"
+hc attr theme.active.title_color "$background"
 hc attr theme.outer_color "$background"
 
 hc attr theme.border_width 2

@@ -5,13 +5,24 @@ hc keyunbind --all
 Super=Mod4
 Alt=Mod1
 
-hc keybind $Super-Shift-q quit
-hc keybind $Super-F12 reload
-hc keybind $Super-q close
+hc keybind $Super-Shift-q   quit
+hc keybind $Super-F12       reload
+hc keybind $Super-q         close
 
-hc keybind $Super-Return spawn st
-hc keybind $Super-d spawn rofi -show run
-hc keybind $Super-F2 spawn org.mozilla.firefox
+hc keybind $Super-Return    spawn st
+hc keybind $Super-d         spawn rofi -show run
+hc keybind $Super-F2        spawn org.mozilla.firefox
+hc keybind $Super-Shift-s   spawn shotclip
+
+# media keys
+hc keybind XF86AudioRaiseVolume     spawn ~/.config/herbstluftwm/scripts/volume.sh inc
+hc keybind XF86AudioLowerVolume     spawn ~/.config/herbstluftwm/scripts/volume.sh dec
+hc keybind XF86AudioMute            spawn ~/.config/herbstluftwm/scripts/volume.sh mute
+# hc keybind XF86AudioPlay            spawn 
+# hc keybind XF86AudioNext            spawn 
+# hc keybind XF86AudioPrev            spawn 
+hc keybind XF86MonBrightnessUp      spawn ~/.config/herbstluftwm/scripts/bright.sh inc
+hc keybind XF86MonBrightnessDown    spawn ~/.config/herbstluftwm/scripts/bright.sh dec
 
 # focus clients
 hc keybind $Super-h     focus left
@@ -26,9 +37,10 @@ hc keybind $Super-Shift-k     shift up
 hc keybind $Super-Shift-l     shift right
 
 # misc focus
-hc keybind $Super-grave   cycle_monitor
-hc keybind $Alt-Tab cycle
-hc keybind $Super-i jumpto urgent
+hc keybind $Super-grave     cycle_monitor
+hc keybind $Alt-Tab         cycle
+hc keybind $Alt-Shift-Tab   cycle -1
+hc keybind $Super-i         jumpto urgent
 
 # tags
 tag_names=( {1..9} 0 )
@@ -53,13 +65,13 @@ hc keybind $Super-Shift-semicolon split explode
 
 # layouting
 hc keybind $Super-r remove
-hc keybind $Super-Shift-s floating toggle
-hc keybind $Super-f fullscreen toggle
-hc keybind $Super-s set_attr clients.focus.floating toggle
-hc keybind $Super-Shift-d set_attr clients.focus.decorated toggle
-hc keybind $Super-Shift-m set_attr clients.focus.minimized true
-hc keybind $Super-Control-m jumpto last-minimized
-hc keybind $Super-p pseudotile toggle
+# hc keybind $Super-Shift-s floating toggle
+hc keybind $Super-f             fullscreen toggle
+hc keybind $Super-s             set_attr clients.focus.floating toggle
+hc keybind $Super-Shift-d       set_attr clients.focus.decorated toggle
+hc keybind $Super-Shift-m       set_attr clients.focus.minimized true
+hc keybind $Super-Control-m     jumpto last-minimized
+hc keybind $Super-p             pseudotile toggle
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
 # I.e. if there are two windows within a frame, the grid layout is skipped.
