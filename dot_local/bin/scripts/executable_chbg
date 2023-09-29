@@ -3,12 +3,14 @@
 case $1 in
     -l)
         file="$2"
-        xresources="$HOME/.config/xinit/xresources-kanagawa-lotus"
+        xresources="$HOME/.config/colors/xresources-kanagawa-lotus"
+        cp ~/.config/colors/kanagawa-lotus.scss ~/.config/colors/colors.scss
         light="-l"
         ;;
     *)
         file="$1"
-        xresources="$HOME/.config/xinit/xresources-kanagawa-dragon"
+        xresources="$HOME/.config/colors/xresources-kanagawa-dragon"
+        cp ~/.config/colors/kanagawa-dragon.scss ~/.config/colors/colors.scss
         light=""
         ;;
 esac
@@ -20,5 +22,5 @@ cp $file ~/.config/back.png
 
 xrdb $xresources
 kill -SIGUSR1 $(pidof st)
-# sleep 0.5
+eww reload
 herbstclient reload
