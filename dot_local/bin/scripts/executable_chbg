@@ -20,5 +20,5 @@ cp $file ~/.config/back.png
 
 xrdb $xresources
 kill -SIGUSR1 $(pidof st)
-sleep 0.5
-pkill -HUP awesome
+# sleep 0.5
+herbstclient reload
