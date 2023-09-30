@@ -11,16 +11,16 @@ hc keybind $Super-q         close
 
 hc keybind $Super-Return    spawn st
 hc keybind $Super-d         spawn rofi -show run
-hc keybind $Super-F2        spawn org.mozilla.firefox
+hc keybind $Super-F2        spawn xdg-wrapper firefox
 hc keybind $Super-Shift-s   spawn shotclip
 
 # media keys
 hc keybind XF86AudioRaiseVolume     spawn ~/.config/herbstluftwm/scripts/volume.sh inc
 hc keybind XF86AudioLowerVolume     spawn ~/.config/herbstluftwm/scripts/volume.sh dec
 hc keybind XF86AudioMute            spawn ~/.config/herbstluftwm/scripts/volume.sh mute
-# hc keybind XF86AudioPlay            spawn 
-# hc keybind XF86AudioNext            spawn 
-# hc keybind XF86AudioPrev            spawn 
+hc keybind XF86AudioPlay            spawn playerctl play-pause
+hc keybind XF86AudioNext            spawn playerctl next
+hc keybind XF86AudioPrev            spawn playerctl previous
 hc keybind XF86MonBrightnessUp      spawn ~/.config/herbstluftwm/scripts/bright.sh inc
 hc keybind XF86MonBrightnessDown    spawn ~/.config/herbstluftwm/scripts/bright.sh dec
 
