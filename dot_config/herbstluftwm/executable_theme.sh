@@ -28,10 +28,17 @@ hc set frame_border_normal_color "$color8"
 hc set frame_bg_active_color "$background"
 hc set frame_bg_normal_color "$color4"
 hc set frame_border_width 2
-hc set show_frame_decorations 'none'
-hc set frame_bg_transparent false
+hc set show_frame_decorations 'all'
+hc set frame_bg_transparent true
 hc set frame_transparent_width 0
-hc set frame_gap 8
+hc set frame_gap 0
+hc set frame_padding 4
+
+hc set window_gap 4
+hc set gapless_grid true
+hc set smart_window_surroundings false
+hc set smart_frame_surroundings false
+hc set mouse_recenter_gap 0
 
 hc attr theme.title_height 10
 hc attr theme.title_when one_tab
@@ -39,7 +46,7 @@ hc attr theme.title_font 'monospace:pixelsize=9'
 hc attr theme.title_depth 3  # space below the title's baseline
 
 hc attr theme.active.color "$color4"
-hc attr theme.title_color "$background"
+hc attr theme.title_color "$color14"
 hc attr theme.normal.color "$color8"
 hc attr theme.urgent.color "$color1"
 hc attr theme.tab_color "$color8"
@@ -50,10 +57,3 @@ hc attr theme.outer_color "$background"
 hc attr theme.border_width 2
 hc attr theme.tiling.outer_width 0
 # hc attr theme.background_color '#141414'
-
-hc set window_gap 2
-hc set gapless_grid on
-hc set frame_padding 0
-hc set smart_window_surroundings off
-hc set smart_frame_surroundings off
-hc set mouse_recenter_gap 0
