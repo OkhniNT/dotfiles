@@ -1,0 +1,4 @@
+#!/bin/dash
+
+sleep 0.2
+maim -u -o $HOME/media/pictures/screenshots/"screenshot-$(date +'%F-%H-%M-%S').png"

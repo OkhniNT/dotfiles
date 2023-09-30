@@ -1,0 +1,21 @@
+#!/bin/sh
+
+case $1 in
+    steam)
+        HOME="$XDG_DATA_HOME/Steam"
+        ;;
+    firefox)
+        mkdir $XDG_DATA_HOME/firefox
+        HOME="$XDG_DATA_HOME/firefox"
+        ;;
+    discord)
+        HOME="$XDG_CONFIG_HOME/discord"
+        ;;
+    spotify-launcher)
+        HOME="$XDG_CACHE_HOME/spotify"
+        ;;
+    *)
+        exit 1
+esac
+
+exec $1
