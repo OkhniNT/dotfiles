@@ -9,7 +9,7 @@ else
 fi
 
 # Path
-export PATH="$PATH:$HOME/.local/bin:$HOME/.local/bin/scripts:$HOME/.local/share/flatpak/exports/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.local/bin/scripts"
 
 # Variables
 export LC_CTYPE="en_AU.UTF-8"

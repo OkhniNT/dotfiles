@@ -1,8 +1,0 @@
-#!/bin/sh
-
-layout=$(echo -n -e "tile\ntile.bottom\ncorner.nw\nspiral.dwindle\nmagnifier\nfair\nfloating\nmax" | rofi -dmenu)
-[ -z $layout ] && exit
-lua="awful = require('awful') awful.layout.set(awful.layout.suit.$layout, awful.screen.focused().selected_tag)"
-
-awesome-client "$lua"
-notify-send "Layout Changed" "$layout"
