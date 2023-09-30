@@ -1,6 +1,0 @@
-#!/bin/sh
-
-btime=$(echo "scale=2; $(cat /sys/class/power_supply/BAT0/charge_now) / $(cat /sys/class/power_supply/BAT0/current_now)" | bc)
-bper=$(cat /sys/class/power_supply/BAT0/capacity)
-
-echo $bper%, $btime hrs
