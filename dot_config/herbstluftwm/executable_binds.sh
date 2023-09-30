@@ -73,7 +73,7 @@ hc keybind $Super-s             set_attr clients.focus.floating toggle
 hc keybind $Super-Shift-d       set_attr clients.focus.decorated toggle
 hc keybind $Super-Shift-m       set_attr clients.focus.minimized true
 hc keybind $Super-Control-m     jumpto last-minimized
-hc keybind $Super-p             pseudotile toggle
+hc keybind $Super-Shift-p       pseudotile toggle
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
 # I.e. if there are two windows within a frame, the grid layout is skipped.
@@ -97,4 +97,3 @@ hc mouseunbind --all
 hc mousebind $Super-Button1 move
 hc mousebind $Super-Button2 zoom
 hc mousebind $Super-Button3 resize
-
