@@ -31,10 +31,12 @@ hc keybind $Super-k     focus up
 hc keybind $Super-l     focus right
 
 # moving clients
-hc keybind $Super-Shift-h     shift left
-hc keybind $Super-Shift-j     shift down
-hc keybind $Super-Shift-k     shift up
-hc keybind $Super-Shift-l     shift right
+hc keybind $Super-Shift-h       shift left
+hc keybind $Super-Shift-j       shift down
+hc keybind $Super-Shift-k       shift up
+hc keybind $Super-Shift-l       shift right
+
+hc keybind $Super-Shift-grave   shift_to_monitor +1
 
 # misc focus
 hc keybind $Super-grave     cycle_monitor
