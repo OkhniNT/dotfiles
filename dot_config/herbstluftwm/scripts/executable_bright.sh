@@ -11,4 +11,5 @@ case $1 in
         ;;
 esac
 
-notify-send -r 1 "$icon" "$(light)"
+val=$(light)
+echo BRIGHT: ${val%.00}% >> ~/.cache/brightness.cache

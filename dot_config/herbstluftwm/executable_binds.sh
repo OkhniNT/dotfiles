@@ -66,7 +66,7 @@ hc keybind $Super-o       split   right   0.5
 hc keybind $Super-Shift-semicolon split explode
 
 # layouting
-hc keybind $Super-r remove
+hc keybind $Super-i remove
 # hc keybind $Super-Shift-s floating toggle
 hc keybind $Super-f             fullscreen toggle
 hc keybind $Super-s             set_attr clients.focus.floating toggle

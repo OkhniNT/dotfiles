@@ -10,9 +10,10 @@ case $1 in
         icon=""
         ;;
     mute)
-        wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%
         icon=""
         ;;
 esac
 
-notify-send -r 1 "$icon" "$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+val=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2)
+echo VOL: ${val#0.}% >> ~/.cache/volume.cache
