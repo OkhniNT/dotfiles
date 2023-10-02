@@ -5,7 +5,7 @@ case $1 in
         HOME="$XDG_DATA_HOME/Steam"
         ;;
     firefox)
-        mkdir $XDG_DATA_HOME/firefox
+        # mkdir $XDG_DATA_HOME/firefox
         HOME="$XDG_DATA_HOME/firefox"
         ;;
     discord)
