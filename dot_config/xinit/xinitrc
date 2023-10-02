@@ -1,6 +1,6 @@
 if [ $PC == laptop ]; then
     # picom -b --config ~/.config/picom/picom-laptop.conf
-    echo
+    eww daemon; eww open bar
 else
     nvidia-settings -l --config="$HOME/.config/NVIDIA/settings"
     eww daemon; eww open-many bar0 bar1
@@ -10,5 +10,4 @@ dunst &
 
 chbg -l $HOME/.config/back.png &
 
-# exec awesome --no-argb
-exec herbstluftwm
+exec herbstluftwm --no-transparency
