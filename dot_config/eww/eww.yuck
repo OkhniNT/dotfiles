@@ -1,3 +1,16 @@
+(defwindow bar
+    :monitor 0
+    :geometry (geometry
+        :width "100%"
+        :height "25px"
+        :anchor "bottom center")
+    :reserve (struts :distance "24px" :side "bottom")
+    (box :space-evenly true
+        (container :align "start" (sep) (textbox :text brightness) (sep) (textbox :text volume) (sep))
+        (container :align "center" (workspaces))
+        (container :align "end" (sep) (textbox :text battery) (sep) (textbox :text datetime) (sep))
+    ))
+
 (defwindow bar0
     :monitor 0
     :geometry (geometry
@@ -24,14 +37,14 @@
         (container :align "end" (sep) (textbox :text datetime) (sep))
     ))
 
-(defwidget textbox [?text]
-    (box :class "textbox" :valign "center"
-        text
-    ))
-
 (defwidget container [?align]
     (box :valign "center" :halign align :space-evenly false :spacing 5
         (children)
+    ))
+
+(defwidget textbox [?text]
+    (box :class "textbox" :valign "center"
+        text
     ))
 
 (defwidget sep []
@@ -41,6 +54,15 @@
 
 (defpoll datetime :interval "5s"
     `date "+%F %R"`)
+
+(defpoll battery :interval "20s"
+    `$HOME/.config/eww/scripts/battery-check.sh`)
+
+(deflisten volume
+    `tail -F ~/.cache/volume.cache`)
+
+(deflisten brightness
+    `tail -F ~/.cache/brightness.cache`)
 
 (deflisten getworkspaces
     `$HOME/.config/eww/scripts/workspaces-herbstluftwm.sh`)
