@@ -2,6 +2,7 @@
 
 case $1 in
     steam)
+        mkdir $XDG_DATA_HOME/Steam
         HOME="$XDG_DATA_HOME/Steam"
         ;;
     firefox)
