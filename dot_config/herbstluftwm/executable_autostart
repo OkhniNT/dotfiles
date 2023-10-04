@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-tail -n ~/.cache/volume.cache > ~/.cache/volume.cache
-tail -n ~/.cache/bright.cache > ~/.cache/bright.cache
+echo $(tail -n 1 ~/.cache/volume.cache) > ~/.cache/volume.cache
+echo $(tail -n 1 ~/.cache/brightness.cache) > ~/.cache/brightness.cache
 
 hc() {
     herbstclient "$@"

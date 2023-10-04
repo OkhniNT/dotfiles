@@ -8,6 +8,7 @@ Alt=Mod1
 hc keybind $Super-Shift-q   quit
 hc keybind $Super-F12       reload
 hc keybind $Super-q         close
+hc keybind $Super-F1        spawn ~/.config/herbstluftwm/scripts/info-notif.sh
 
 hc keybind $Super-Return    spawn st
 hc keybind $Super-d         spawn rofi -show run
