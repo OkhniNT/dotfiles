@@ -5,17 +5,14 @@ case $1 in
         file="$2"
         xresources="$HOME/.config/colors/xresources-kanagawa-lotus"
         cp ~/.config/colors/kanagawa-lotus.scss ~/.config/colors/colors.scss
-        light="-l"
         ;;
     *)
         file="$1"
         xresources="$HOME/.config/colors/xresources-kanagawa-dragon"
         cp ~/.config/colors/kanagawa-dragon.scss ~/.config/colors/colors.scss
-        light=""
         ;;
 esac
 
-# wal -c; wal -e -s -t $light -i "$file"
 feh --bg-fill "$file"
 rm ~/.fehbg
 cp $file ~/.config/back.png
