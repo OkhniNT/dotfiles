@@ -2,7 +2,7 @@ return {
     { 'rebelot/kanagawa.nvim', config = function ()
         require('kanagawa').setup({
             transparent = true,
-            colors = { theme = { all = { ui = { bg_gutter = 'none' } } } },
+            colors = { theme = { all = { ui = { fg = 'none', bg_gutter = 'none' } } } },
         })
         vim.cmd.colorscheme('kanagawa')
     end },
@@ -67,6 +67,10 @@ return {
         })
         vim.api.nvim_set_hl(0, 'EyelinerPrimary', { bold = true, underline = true })
         vim.api.nvim_set_hl(0, 'EyelinerSecondary', { underline = true })
+    end },
+
+    { 'nvchad/nvim-colorizer.lua', config = function () 
+        require('colorizer').setup()
     end },
 }
 

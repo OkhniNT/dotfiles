@@ -14,6 +14,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- set term colours
+vim.g.termguicolors = true
 -- set leader
 vim.g.mapleader = ','
 
@@ -70,6 +72,8 @@ vim.keymap.set('n', '<leader>dg', ':diffget <cr>', { noremap = true })
 
 -- Commands --
 
+-- W saves
+vim.api.nvim_create_user_command('W', 'w', {})
 -- reload file
 vim.api.nvim_create_user_command('WE', 'w | e %', { bang = true })
 -- open in zathura
