@@ -1,11 +1,11 @@
 ! Kanagawa Lotus (Light) !
-*background: #ebe7cc
-*foreground: #3d3d4a
-*cursor: #3d3d4a
+*background: #f2ecbc
+*foreground: #313140
+*cursor: #313140
 
 ! Normal !
 ! White
-*color0: #ebe7cc
+*color0: #f2ecbc
 ! Red
 *color1: #c84053
 ! Green
@@ -17,13 +17,13 @@
 ! Magenta
 *color5: #b35b79
 ! Cyan
-*color6: #d7e3d8
+*color6: #597b75
 ! Black
-*color7: #3d3d4a
+*color7: #313140
 
 ! Bright !
 ! White
-*color8: #393836
+*color8: #c9cbd1
 ! Red
 *color9: #d7474b
 ! Green
@@ -31,11 +31,10 @@
 ! Yellow
 *color11: #f9d791
 ! Blue
-*color12: #5d57a3
+*color12: #6693bf
 ! Magenta
 *color13: #d27e99
 ! Cyan
 *color14: #9fb5c9
 ! Black
 *color15: #545464
-

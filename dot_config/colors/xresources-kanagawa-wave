@@ -1,0 +1,40 @@
+! Kanagawa Wave (Dark) !
+*background: #0d0c0c
+*foreground: #c5c9c5
+*cursor: #c5c9c5
+
+! Normal !
+! Black
+*color0: #0d0c0c
+! Red
+*color1: #c34043
+! Green
+*color2: #76946a
+! Yellow
+*color3: #c0a36e
+! Blue
+*color4: #7e9cd8
+! Magenta
+*color5: #957fb8
+! Cyan
+*color6: #6a9589
+! White
+*color7: #c5c9c5
+
+! Bright !
+! Black
+*color8: #727169
+! Red
+*color9: #e82424
+! Green
+*color10: #98bb6c
+! Yellow
+*color11: #e6c384
+! Blue
+*color12: #7fb4ca
+! Magenta
+*color13: #d27e99
+! Cyan
+*color14: #7aa89f
+! White
+*color15: #dcd7ba
