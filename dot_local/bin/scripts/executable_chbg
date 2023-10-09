@@ -1,23 +1,26 @@
 #!/bin/zsh
 
+dark_theme="$HOME/.config/colors/xresources-kanagawa-wave"
+light_theme="$HOME/.config/colors/xresources-kanagawa-lotus"
+
 case $1 in
     -l)
         file="$2"
-        xresources="$HOME/.config/colors/xresources-kanagawa-lotus"
-        cp ~/.config/colors/kanagawa-lotus.scss ~/.config/colors/colors.scss
+        xresources="$light_theme"
+        cp $light_theme.scss ~/.config/colors/colors.scss
         ;;
     *)
         file="$1"
-        xresources="$HOME/.config/colors/xresources-kanagawa-dragon"
-        cp ~/.config/colors/kanagawa-dragon.scss ~/.config/colors/colors.scss
+        xresources="$dark_theme"
+        cp $dark_theme.scss ~/.config/colors/colors.scss
         ;;
 esac
+xrdb $xresources
+kill -SIGUSR1 $(pidof st)
 
 feh --bg-fill "$file"
 rm ~/.fehbg
 cp $file ~/.config/back.png
 
-xrdb $xresources
-kill -SIGUSR1 $(pidof st)
 eww reload
 herbstclient reload
