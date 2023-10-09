@@ -4,26 +4,19 @@ case $1 in
     steam)
         mkdir $XDG_DATA_HOME/Steam
         HOME="$XDG_DATA_HOME/Steam"
-        exec $1
         ;;
     firefox)
-        mkdir $XDG_DATA_HOME/firefox
+        # mkdir $XDG_DATA_HOME/firefox
         HOME="$XDG_DATA_HOME/firefox"
-        exec $1
         ;;
     discord)
         HOME="$XDG_CONFIG_HOME/discord"
-        exec $1
         ;;
     spotify-launcher)
         HOME="$XDG_CACHE_HOME/spotify"
-        exec $1
-        ;;
-    beyond-all-reason)
-        mkdir $XDG_DATA_HOME/beyond-all-reason
-        HOME="$XDG_DATA_HOME/beyond-all-reason"
-        exec $1.appimage
         ;;
     *)
         exit 1
 esac
+
+exec $1
