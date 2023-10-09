@@ -23,6 +23,7 @@ alias grep='grep --color=auto'
 alias sx='startx'
 alias bl='bluetoothctl'
 alias bcon='bluetoothctl power on; bluetoothctl devices | rofi -dmenu | cut -d " " -f2 | xargs bluetoothctl connect'
+alias hc='herbstclient'
 
 alias v='nvim'
 alias vim='nvim'
