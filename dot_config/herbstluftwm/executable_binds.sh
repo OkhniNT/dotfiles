@@ -10,10 +10,11 @@ hc keybind $Super-F12       reload
 hc keybind $Super-q         close
 hc keybind $Super-F1        spawn ~/.config/herbstluftwm/scripts/info-notif.sh
 
-hc keybind $Super-Return    spawn st
-hc keybind $Super-d         spawn rofi -show run
-hc keybind $Super-F2        spawn xdg-wrapper firefox
-hc keybind $Super-Shift-s   spawn shotclip
+hc keybind $Super-Return        spawn st
+hc keybind $Super-Shift-Return  spawn st -c 'popterm'
+hc keybind $Super-d             spawn rofi -show run
+hc keybind $Super-F2            spawn xdg-wrapper firefox
+hc keybind $Super-Shift-s       spawn shotclip
 
 # media keys
 hc keybind XF86AudioRaiseVolume     spawn ~/.config/herbstluftwm/scripts/volume.sh inc
@@ -43,7 +44,8 @@ hc keybind $Super-Shift-grave   shift_to_monitor +1
 hc keybind $Super-grave     cycle_monitor
 hc keybind $Alt-Tab         cycle
 hc keybind $Alt-Shift-Tab   cycle -1
-hc keybind $Super-i         jumpto urgent
+hc keybind $Alt-a           cycle_all
+# hc keybind $Super-i         jumpto urgent
 
 # tags
 tag_names=( {1..9} 0 )
@@ -61,8 +63,9 @@ done
 
 # splitting frames
 # create an empty frame at the specified direction
-hc keybind $Super-u       split   bottom  0.5
-hc keybind $Super-o       split   right   0.5
+hc keybind $Super-u         split       bottom  0.5
+hc keybind $Super-o         split       right   0.5
+hc keybind $Super-Shift-o   chain ,     split left 0.25 , split right 0.666
 # let the current frame explode into subframes
 hc keybind $Super-Shift-semicolon split explode
 
