@@ -75,6 +75,7 @@ hc keybind $Super-i remove
 hc keybind $Super-f             fullscreen toggle
 hc keybind $Super-s             set_attr clients.focus.floating toggle
 hc keybind $Super-Shift-d       set_attr clients.focus.decorated toggle
+hc keybind $Super-p             set_attr clients.focus.sticky toggle
 hc keybind $Super-Shift-m       set_attr clients.focus.minimized true
 hc keybind $Super-Control-m     jumpto last-minimized
 hc keybind $Super-Shift-p       pseudotile toggle
