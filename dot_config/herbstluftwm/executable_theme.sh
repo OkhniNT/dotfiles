@@ -23,8 +23,14 @@ color15="$(xrdb -get color15)"
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
 
+hc set gapless_grid true
+hc set smart_window_surroundings false
+hc set smart_frame_surroundings false
+hc set mouse_recenter_gap 0
+
 hc set frame_border_active_color "$color2"
 hc set frame_border_normal_color "$color8"
+
 hc set frame_border_width 2
 hc set show_frame_decorations 'all'
 hc set frame_bg_transparent true
@@ -32,26 +38,21 @@ hc set frame_transparent_width 0
 hc set frame_gap 0
 hc set frame_padding 2
 
-hc set window_gap 2
-hc set gapless_grid true
-hc set smart_window_surroundings false
-hc set smart_frame_surroundings false
-hc set mouse_recenter_gap 0
-
-hc attr theme.title_height 10
-hc attr theme.title_when one_tab
-hc attr theme.title_font 'monospace:pixelsize=9'
-hc attr theme.title_depth 3  # space below the title's baseline
-
 hc attr theme.active.color "$color2"
-hc attr theme.title_color "$color14"
 hc attr theme.normal.color "$color8"
 hc attr theme.urgent.color "$color1"
-hc attr theme.tab_color "$color8"
-hc attr theme.active.tab_color "$color8"
-hc attr theme.active.title_color "$background"
 hc attr theme.outer_color "$background"
 
+hc set window_gap 2
 hc attr theme.border_width 2
-hc attr theme.tiling.outer_width 0
-# hc attr theme.background_color '#141414'
+
+hc attr theme.title_font "monospace:pixelsize=0"
+hc attr theme.tab_color "$color0"
+hc attr theme.title_color "$color0"
+hc attr theme.tab_outer_color "$color8"
+hc attr theme.active.tab_color "$color8"
+hc attr theme.active.title_color "$color2"
+
+hc attr theme.title_height 6
+hc attr theme.tab_outer_width 2
+hc attr theme.title_when one_tab
