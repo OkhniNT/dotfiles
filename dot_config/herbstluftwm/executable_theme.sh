@@ -46,9 +46,9 @@ hc attr theme.outer_color "$background"
 hc set window_gap 2
 hc attr theme.border_width 2
 
-hc attr theme.title_font "monospace:pixelsize=0"
+hc attr theme.title_font "monospace:pixelsize=1"
 hc attr theme.tab_color "$color0"
-hc attr theme.title_color "$color0"
+hc attr theme.title_color "$color8"
 hc attr theme.tab_outer_color "$color8"
 hc attr theme.active.tab_color "$color8"
 hc attr theme.active.title_color "$color2"
