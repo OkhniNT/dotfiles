@@ -24,6 +24,7 @@ alias sx='startx'
 alias bl='bluetoothctl'
 alias bcon='bluetoothctl power on; bluetoothctl devices | rofi -dmenu | cut -d " " -f2 | xargs bluetoothctl connect'
 alias hc='herbstclient'
+alias r='R --no-save'
 
 alias v='nvim'
 alias vim='nvim'
