@@ -3,5 +3,5 @@
 sink="$(pactl list sinks short | cut -d'	' -f1-2 | rofi -dmenu -p "Sink Select")"
 sinkName="$(echo $sink | cut -d' ' -f2)"
 
-pactl set-default-sink $sinkName
+val=$(pactl set-default-sink $sinkName)
 echo VOL: ${val#0.}% >> ~/.cache/volume.cache
