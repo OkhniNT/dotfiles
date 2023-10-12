@@ -65,7 +65,7 @@ done
 # create an empty frame at the specified direction
 hc keybind $Super-u         split       bottom  0.5
 hc keybind $Super-o         split       right   0.5
-hc keybind $Super-Shift-o   chain ,     split left 0.25 , split right 0.666
+hc keybind $Super-Shift-o   chain ,     split left 0.3 , split right 0.5714
 # let the current frame explode into subframes
 hc keybind $Super-Shift-semicolon split explode
 
@@ -79,9 +79,6 @@ hc keybind $Super-p             set_attr clients.focus.sticky toggle
 hc keybind $Super-Shift-m       set_attr clients.focus.minimized true
 hc keybind $Super-Control-m     jumpto last-minimized
 hc keybind $Super-Shift-p       pseudotile toggle
-# The following cycles through the available layouts within a frame, but skips
-# layouts, if the layout change wouldn't affect the actual window positions.
-# I.e. if there are two windows within a frame, the grid layout is skipped.
 hc keybind $Super-semicolon cycle_layout +1 vertical horizontal max
 
 # resizing frames and floating clients
