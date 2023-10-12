@@ -3,5 +3,7 @@
 sink="$(pactl list sinks short | cut -d'	' -f1-2 | rofi -dmenu -p "Sink Select")"
 sinkName="$(echo $sink | cut -d' ' -f2)"
 
-val=$(pactl set-default-sink $sinkName)
+pactl set-default-sink $sinkName
+
+val=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2)
 echo VOL: ${val#0.}% >> ~/.cache/volume.cache
