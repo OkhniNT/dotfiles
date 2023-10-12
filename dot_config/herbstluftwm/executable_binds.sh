@@ -82,10 +82,7 @@ hc keybind $Super-Shift-p       pseudotile toggle
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
 # I.e. if there are two windows within a frame, the grid layout is skipped.
-hc keybind $Super-semicolon                                                     \
-            or , and . compare tags.focus.curframe_wcount = 2                   \
-                     . cycle_layout +1 vertical horizontal max vertical grid    \
-               , cycle_layout +1
+hc keybind $Super-semicolon cycle_layout +1 vertical horizontal max
 
 # resizing frames and floating clients
 resizestep=0.02
