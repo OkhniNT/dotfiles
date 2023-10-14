@@ -9,6 +9,9 @@ getworkspaces() {
             -*)
                 echo -n "(box :class 'tag_focused' '${tag:1}')"
                 ;;
+            !*)
+                echo -n "(box :class 'tag_urgent' '${tag:1}')"
+                ;;
             :*)
                 echo -n "(box :class 'tag_occupied' '${tag:1}')"
                 ;;
