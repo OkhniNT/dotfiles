@@ -12,7 +12,7 @@ case $1 in
     discord)
         HOME="$XDG_CONFIG_HOME/discord"
         ;;
-    spotify-launcher)
+    spotify)
         HOME="$XDG_CACHE_HOME/spotify"
         ;;
     beyond-all-reason)
