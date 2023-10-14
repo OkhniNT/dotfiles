@@ -33,7 +33,7 @@
     border-radius: 2;
 }
 
-.tag_active, .tag_focused, .tag_occupied {
+.tag_active, .tag_focused, .tag_occupied, .tag_urgent {
     padding: 1 7 2;
     margin: 0 2;
 
@@ -45,6 +45,10 @@
 }
 
 .tag_focused {
+    background-color: $color3;
+}
+
+.tag_urgent {
     background-color: $color1;
 }
 
