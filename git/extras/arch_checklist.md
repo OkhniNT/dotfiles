@@ -12,8 +12,8 @@ xorg-xev
 
 ### Secondary
 
-pacman -S rofi ueberzug feh htop maim sxiv zathura python-pywal fzf fontconfig \
-picom xdg-user-dirs flatpak xdg-desktop-portal-gtk xdg-desktop-portal udisks2
+pacman -S rofi ueberzug feh htop maim sxiv zathura fzf fontconfig picom \
+xdg-user-dirs udisks2
 
 ### Supplementary
 
@@ -23,19 +23,14 @@ pipewire-docs wireplumber
 ### Miscellaneous
 
 pacman -S texlive-basic texlive-latex texlive-latexrecommended \
-texlive-fontsrecommended noto-fonts figlet imagemagick gimp inkscape mpv \
-obsidian qbittorrent r vlc libreoffice rustup thunar
-
-
-## Flatpak
-
-flatpak install -u firefox spotify steam discord
+texlive-fontsrecommended firefox steam noto-fonts figlet imagemagick gimp \
+inkscape mpv obsidian qbittorrent r vlc libreoffice rustup thunar
 
 
 ## AUR
 
 git clone https://aur.archlinux.org/paru.git; cd paru; makepkg -si
-paru -S pandoc-bin mullvad-vpn
+paru -S pandoc-bin mullvad-vpn spotify discord_arch_electron
 
 
 ## System Specific
