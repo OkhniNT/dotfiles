@@ -16,7 +16,6 @@ source $HOME/.config/herbstluftwm/binds.sh
 hc unrule -F
 #hc rule class=XTerm tag=3 # move all xterms to tag 3
 hc rule focus=on # normally focus new clients
-# hc rule floatplacement=smart
 hc rule floatplacement=center
 hc rule index=e # prefer placing clients in an empty frame
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
@@ -26,7 +25,8 @@ hc rule fixedsize floating=on
 hc rule class='popterm' floating=on
 hc rule class='popterm' floatplacement=center
 
-hc set tabbed_max true
+hc set snap_distance 12
+hc set snap_gap 4
 hc set tree_style '╾│ ├└╼─┐'
 hc set update_dragged_clients false
 hc set focus_follows_mouse on
