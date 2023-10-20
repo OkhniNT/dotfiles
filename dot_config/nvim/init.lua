@@ -44,6 +44,9 @@ vim.opt.lcs = 'eol:$,trail:~,extends:>,precedes:<,space:·'
 -- set conceal level
 vim.opt.cole = 0
 
+-- set new tabline
+vim.api.nvim_set_option("tabline", [[%{%v:lua.require("tabline").draw()%}]])
+
 -- Bindings --
 
 -- save
