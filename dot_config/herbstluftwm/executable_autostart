@@ -23,8 +23,7 @@ hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc rule title='Steam Settings' floating=on
 hc rule fixedsize floating=on
-hc rule class='popterm' floating=on
-hc rule class='popterm' floatplacement=center
+hc rule class~'(popterm|Nemo)' floating=on
 
 hc set snap_distance 12
 hc set snap_gap 4
