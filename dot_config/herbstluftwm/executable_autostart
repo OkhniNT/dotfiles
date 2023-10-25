@@ -28,7 +28,7 @@ hc rule class~'(popterm|Nemo)' floating=on
 hc set snap_distance 12
 hc set snap_gap 4
 hc set tree_style '╾│ ├└╼─┐'
-hc set update_dragged_clients true
+hc set update_dragged_clients on
 hc set focus_follows_mouse on
 
 # unlock, just to be sure
