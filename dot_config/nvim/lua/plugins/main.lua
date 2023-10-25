@@ -29,17 +29,6 @@ return {
         vim.keymap.set('n', '<leader>tb', telescope.buffers, { noremap = true })
     end },
 
-    -- { 'ms-jpq/coq-nvim', branch = 'coq', config = function ()
-    --     vim.g.coq_settings = { ['keymap.jump_to_mark'] = '<c-a>', ['keymap.recommended'] = false }
-
-    --     vim.keymap.set('i', '<tab>', [[pumvisible() ? '<c-n>' : '<tab>']], { expr = true, noremap = true })
-    --     vim.keymap.set('i', '<esc>', [[pumvisible() ? '<c-e><esc>' : '<esc>']], { expr = true, noremap = true })
-
-    --     vim.keymap.set('n', '<leader>cx', ':COQnow -s <cr>', { noremap = true })
-    --     vim.keymap.set('n', '<leader>cse', ':COQsnips edit <cr>', { noremap = true })
-    --     vim.keymap.set('n', '<leader>csc', ':COQsnips compile <cr>', { noremap = true })
-    -- end },
-
     { 'kylechui/nvim-surround', opts = {} },
 
     { 'folke/zen-mode.nvim', config = function ()
