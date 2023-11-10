@@ -9,6 +9,7 @@ hc keybind $Super-Shift-q   quit
 hc keybind $Super-F12       reload
 hc keybind $Super-q         close
 hc keybind $Super-F1        spawn ~/.config/herbstluftwm/scripts/info-notif.sh
+hc keybind $Super-End       spawn dpms-standby
 
 hc keybind $Super-Return        spawn st
 hc keybind $Super-Shift-Return  spawn st -c 'popterm'
