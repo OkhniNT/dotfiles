@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xset dpms force standby
+sleep 10
+xset dpms force standby
