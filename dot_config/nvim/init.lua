@@ -45,7 +45,7 @@ vim.opt.lcs = 'eol:$,trail:~,extends:>,precedes:<,space:·'
 vim.opt.cole = 0
 
 -- set new tabline
-vim.api.nvim_set_option("tabline", [[%{%v:lua.require("tabline").draw()%}]])
+-- vim.api.nvim_set_option("tabline", require("tabline").draw())
 
 -- Bindings --
 
@@ -84,12 +84,12 @@ vim.api.nvim_create_user_command('Z', 'silent !zth "%:r".pdf', { bang = true })
 
 -- Autocommands --
 
-vim.api.nvim_create_autocmd({ 'BufReadPost', 'FileReadPost' }, {
-    pattern = '*',
-    command = ':norm zR'
-})
--- vim.api.nvim_create_autocmd({ 'BufReadPre', 'BufNewFile' }, {
---     pattern = '*.tex',
---     callback = function () vim.keymap.set('n', '==', ':w <cr>:silent !pdflatex "%"; rm *.log *.aux <cr>:silent redraw! <cr>') end,
+-- vim.api.nvim_create_autocmd({ 'BufReadPost', 'FileReadPost' }, {
+--     pattern = '*',
+--     command = ':norm zR'
 -- })
+vim.api.nvim_create_autocmd({ 'BufReadPre', 'BufNewFile' }, {
+    pattern = '*.tex',
+    callback = function () vim.keymap.set('n', '==', ':w <cr>:silent !pdflatex "%"; rm *.log *.aux <cr>:silent redraw! <cr>') end,
+})
 
