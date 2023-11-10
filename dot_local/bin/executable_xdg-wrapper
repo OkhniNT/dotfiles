@@ -15,6 +15,10 @@ case $1 in
     spotify)
         HOME="$XDG_CACHE_HOME/spotify"
         ;;
+    stremio)
+        mkdir $XDG_DATA_HOME/stremio
+        HOME="$XDG_DATA_HOME/stremio"
+        ;;
     beyond-all-reason)
         mkdir $XDG_DATA_HOME/beyond-all-reason
         HOME="$XDG_DATA_HOME/beyond-all-reason"
