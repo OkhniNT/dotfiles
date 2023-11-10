@@ -1,0 +1,97 @@
+# general snippets
+snippet document
+    \\documentclass{article}
+    \\usepackage{base}
+    $1
+    \\begin{document}
+    $0
+    \\end{document}
+
+snippet usepackage
+    \\usepackage$1{$2}$0
+
+snippet inkscapefigure
+    \\usepackage{import}
+    \\usepackage{pdfpages}
+    \\usepackage{transparent}
+    \\usepackage{xcolor}
+
+    \\newcommand{\\incfig}[2][1]{%
+        \\def\\svgwidth{#1\\columnwidth}
+        \\import{./figures/}{#2.pdf_tex}
+    }
+
+    \\pdfsuppresswarningpagegroup=1
+
+snippet beginend
+    \\begin{$1}
+        ${0:$VISUAL}
+    \\end{$1}
+
+snippet tabular
+    \\begin{center}
+        \\begin{tabular}{$1}
+            $0
+        \\end{tabular}
+    \\end{center}
+
+# bold, italic snippets
+
+# section snippets
+snippet section
+    \\section{$1}$0
+
+snippet subsection
+    \\subsection{$1}$0
+
+snippet subsubsection
+    \\subsubsection{$1}$0
+
+snippet paragraph
+    \\paragraph{$1}$0
+
+# maths snippets
+snippet mathsinline
+    \$ $1 \$$0
+
+snippet mathsdisplay
+    \$\$
+        $1
+    \$\$$0
+
+snippet square-brackets
+    \\left[$1\\right]$0
+
+snippet round-brackets
+    \\left($1\\right)$0
+
+snippet unit
+    \\ \\mathrm{$1}$0
+
+snippet // "fraction"
+    \\frac{$1}{$2}$0
+
+snippet sqrt
+    \\sqrt{$1}$0
+
+snippet square
+    ^2
+
+snippet cube
+    ^3
+
+snippet superscript
+    ^{$1}$0
+
+snippet subscript
+    _{$1}$0
+
+snippet integral
+    \\int^{$1}_{$2}$0
+
+snippet limit
+    \\lim_{$1}$0
+
+snippet text
+    \\text{$1}$0
+
