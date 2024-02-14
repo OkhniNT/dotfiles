@@ -49,8 +49,10 @@ hc keybind $Alt-a           cycle_all
 # hc keybind $Super-i         jumpto urgent
 
 # tags
+hc set default_frame_layout 'horizontal'
 tag_names=( {1..9} 0 )
 tag_keys=( {1..9} 0 )
+hc set_layout horizontal
 
 hc rename default "${tag_names[0]}" || true
 for i in "${!tag_names[@]}" ; do
@@ -80,7 +82,8 @@ hc keybind $Super-p             set_attr clients.focus.sticky toggle
 hc keybind $Super-Shift-m       set_attr clients.focus.minimized true
 hc keybind $Super-Control-m     jumpto last-minimized
 hc keybind $Super-Shift-p       pseudotile toggle
-hc keybind $Super-semicolon cycle_layout +1 vertical horizontal max
+hc keybind $Super-semicolon cycle_layout +1 vertical horizontal
+hc keybind $Super-t set_layout max
 
 # resizing frames and floating clients
 resizestep=0.02
