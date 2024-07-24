@@ -6,20 +6,20 @@
 
     font-family: monospace;
     font-weight: bold;
-    font-size: 10;
+    font-size: 12;
 }
 
 .sep {
-    font-size: 15;
+    font-size: 12;
 
-    padding: 0 2 2;
+    padding: 2 2 0;
 }
 
 .textbox {
     background-color: $color4;
     color: $background;
 
-    padding: 1 7 2;
+    padding: 2 7 0;
 
     border-radius: 2;
 }
@@ -34,7 +34,7 @@
 }
 
 .tag_active, .tag_focused, .tag_occupied, .tag_urgent {
-    padding: 1 7 2;
+    padding: 2 6 0;
     margin: 0 2;
 
     border-radius: 4;
