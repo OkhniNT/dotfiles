@@ -49,6 +49,11 @@ vim.opt.cole = 0
 
 -- Bindings --
 
+-- arrow keys move relative
+vim.keymap.set('n', '<Left>', 'gh', { noremap = true })
+vim.keymap.set('n', '<Down>', 'gj', { noremap = true })
+vim.keymap.set('n', '<Up>', 'gk', { noremap = true })
+vim.keymap.set('n', '<Right>', 'gl', { noremap = true })
 -- save
 vim.keymap.set('n', '==', ':w <cr>', { noremap = true })
 -- terminal commands
