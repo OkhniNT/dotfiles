@@ -20,11 +20,11 @@ return {
         vim.api.nvim_set_keymap('i', '<cr>', 'v:lua.MUtils.CR()', { expr = true, noremap = true })
 
         npairs.add_rules({
-            Rule(' ', ' ')
-                :with_pair(cond.before_regex('[%[({%$]',1))
-                :with_pair(cond.after_regex('[%])}%$]', 1))
-                :with_del(cond.not_before_regex('%w%s', 2))
-                :with_move(cond.after_regex('%s[%])}%$]', 2)),
+            -- Rule(' ', ' ')
+            --     :with_pair(cond.before_regex('[%[({%$]',1))
+            --     :with_pair(cond.after_regex('[%])}%$]', 1))
+            --     :with_del(cond.not_before_regex('%w%s', 2))
+            --     :with_move(cond.after_regex('%s[%])}%$]', 2)),
             Rule('$', '$', 'tex'):with_move(cond.done()):with_cr(cond.none()),
             Rule('$$', '$$', 'tex'):end_wise(cond.after_regex('$', 1)),
         })
