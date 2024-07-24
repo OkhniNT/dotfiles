@@ -21,6 +21,15 @@ return {
         -- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
     end },
 
+    { 'lukas-reineke/headlines.nvim', dependencies = 'nvim-treesitter/nvim-treesitter', opts = {}, config = function()
+        require('headlines').setup({
+            markdown = {
+                bullets = { '#', '$', '%', '&' },
+                fat_headlines = true,
+            },
+        })
+    end },
+
     { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' , 'burntsushi/ripgrep' }, config = function ()
         local telescope = require('telescope.builtin')
 
