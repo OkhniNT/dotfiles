@@ -2,7 +2,8 @@ return {
     { 'neovim/nvim-lspconfig', config = function ()
         local lspconfig = require('lspconfig')
         lspconfig.clangd.setup {}
-        lspconfig.pylsp.setup {}
+        lspconfig.pyright.setup {}
+        lspconfig.rust_analyzer.setup {}
     end },
     { 'hrsh7th/cmp-nvim-lsp' },
 
@@ -43,7 +44,10 @@ return {
         require('lspconfig')['clangd'].setup {
             capabilities = capabilities
         }
-        require('lspconfig')['pylsp'].setup {
+        require('lspconfig')['pyright'].setup {
+            capabilities = capabilities
+        }
+        require('lspconfig')['rust_analyzer'].setup {
             capabilities = capabilities
         }
 
